@@ -1,5 +1,4 @@
 import argparse
-import argparse
 
 mudpath = "/domains/dome/rooms/"
 syspath = "/Users/evilmog/git/git/lib"
