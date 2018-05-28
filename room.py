@@ -2,7 +2,7 @@ import argparse
 import argparse
 
 mudpath = "/domains/dome/rooms/"
-syspath = "/Users/dustin.heywood1@ibm.com/git/git/lib"
+syspath = "/Users/evilmog/git/git/lib"
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--name', help='room name', required=True)
