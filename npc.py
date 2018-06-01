@@ -1,11 +1,12 @@
 import argparse
 
-mudpath = "/domains/dome/monsters/"
-syspath = "/Users/evilmog/git/git/lib"
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--file', help='npc file', required=True)
+
 parser.add_argument('--name', help='npc name', required=True)
+parser.add_argument('--domain', help='path to domain include ../domain.h', required=True)
+parser.add_argument('--syspath', help='system path to drop files', required=True)
 parser.add_argument('--adj', help='adjective', required=False)
 parser.add_argument('--adj2', help='adjective', required=False)
 parser.add_argument('--adj3', help='adjective', required=False)
@@ -30,11 +31,13 @@ parser.add_argument('--slvl5', help='secondary skill level, eg: 100', required=F
 
 args = parser.parse_args()
 
-npcfile = open(syspath + mudpath + args.file + ".c", "w")
+npcfile = open(args.syspath + args.file + ".c", "w")
 #print args.short
 #print args.long
 
 npcfile.write('inherit "/std/monster";\n\n')
+roomfile.write('inherit "'+args.domain+'");\n\n')
+
 npcfile.write('void setup( void ) {\n')
 npcfile.write('  set_name("'+args.name+'");\n')
 if args.adj is not None:
@@ -72,7 +75,6 @@ if args.skill5 is not None:
   if args.slvl5 is not None:
     npcfile.write('  set_skill("' + args.skill5 + '", ' + str(args.slvl5) + ');\n')
 
-print syspath + mudpath
 
 # end code here
 npcfile.write('}\n')
