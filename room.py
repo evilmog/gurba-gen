@@ -1,6 +1,4 @@
 import argparse
-import argparse
-
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--name', help='room name', required=True)

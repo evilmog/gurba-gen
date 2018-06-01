@@ -1,8 +1,7 @@
 import argparse
-import argparse
 
 mudpath = "/domains/dome/monsters/"
-syspath = "/Users/dustin.heywood1@ibm.com/git/git/lib"
+syspath = "/Users/evilmog/git/git/lib"
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--file', help='npc file', required=True)
