@@ -21,8 +21,6 @@ parser.add_argument('--up', help='path to up exit', required=False)
 parser.add_argument('--down', help='path to down exit', required=False)
 parser.add_argument('--item1', help='item1 name', required=False)
 parser.add_argument('--item1desc', help='item1 desc', required=False)
-parser.add_argument('--item1', help='item1 name', required=False)
-parser.add_argument('--item1desc', help='item1 desc', required=False)
 parser.add_argument('--item2', help='item1 name', required=False)
 parser.add_argument('--item2desc', help='item1 desc', required=False)
 parser.add_argument('--item3', help='item1 name', required=False)
@@ -57,16 +55,16 @@ else:
 # item code here
 if args.item1 is not None:
   if args.item1desc is not None:
-    roomfile.write('  add_item("' + args.item1 + '", "' + args.item1desc + '");' )
+    roomfile.write('  add_item("' + args.item1 + '", "' + args.item1desc + '");\n' )
 if args.item2 is not None:
   if args.item2desc is not None:
-    roomfile.write('  add_item("' + args.item2 + '", "' + args.item2desc + '");' )
+    roomfile.write('  add_item("' + args.item2 + '", "' + args.item2desc + '");\n' )
 if args.item3 is not None:
   if args.item3desc is not None:
-    roomfile.write('  add_item("' + args.item3 + '", "' + args.item3desc + '");' )
+    roomfile.write('  add_item("' + args.item3 + '", "' + args.item3desc + '");\n' )
 if args.item4 is not None:
   if args.item4desc is not None:
-    roomfile.write('  add_item("' + args.item4 + '", "' + args.item4desc + '");' )
+    roomfile.write('  add_item("' + args.item4 + '", "' + args.item4desc + '");\n' )
 
 # exits code here
 exits = []
@@ -101,19 +99,19 @@ if args.obj3 is not None:
 if args.obj4 is not None:
   objects.append([args.obj4])
 
-if objects is not None:
-  roomfile.write( '  set_objects( ([\n)
+if objects:
+  roomfile.write( '\n  set_objects( ([\n' )
   objcount = len(objects)
   objnum = 0
   for object in objects:
     objnum += 1
     if objcount == objnum:
-      roomfile.write( '    DIR + "' + object + '"\n' )
+      roomfile.write( '    DIR + "' + object[0] + '"\n' )
     else:
-      roomfile.write( '    DIR + "' + object + '",\n' )
+      roomfile.write( '    DIR + "' + object[0] + '",\n' )
   roomfile.write('  );\n\n')
 
-if exits is not None:
+if exits:
   roomfile.write(' set_exits( ([\n')
   exitcount = len(exits)
   exitnum = 0
