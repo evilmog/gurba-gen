@@ -1,11 +1,11 @@
 import argparse
 import argparse
 
-mudpath = "/domains/dome/rooms/"
-syspath = "/Users/dustin.heywood1@ibm.com/git/git/lib"
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--name', help='room name', required=True)
+parser.add_argument('--domain', help='path to domain include ../domain.h', required=True)
+parser.add_argument('--syspath', help='system path to drop files', required=True)
 parser.add_argument('--short', help='short desc', required=True)
 parser.add_argument('--scolor', help='short desc color', required=False)
 parser.add_argument('--long', help='long desc', required=True)
@@ -21,14 +21,29 @@ parser.add_argument('--southeast', help='path to southeast exit', required=False
 parser.add_argument('--southwest', help='path to southwest exit', required=False)
 parser.add_argument('--up', help='path to up exit', required=False)
 parser.add_argument('--down', help='path to down exit', required=False)
+parser.add_argument('--item1', help='item1 name', required=False)
+parser.add_argument('--item1desc', help='item1 desc', required=False)
+parser.add_argument('--item1', help='item1 name', required=False)
+parser.add_argument('--item1desc', help='item1 desc', required=False)
+parser.add_argument('--item2', help='item1 name', required=False)
+parser.add_argument('--item2desc', help='item1 desc', required=False)
+parser.add_argument('--item3', help='item1 name', required=False)
+parser.add_argument('--item3desc', help='item1 desc', required=False)
+parser.add_argument('--item4', help='item1 name', required=False)
+parser.add_argument('--item4desc', help='item1 desc', required=False)
+parser.add_argument('--obj1', help='path to obj1', required=False)
+parser.add_argument('--obj2', help='path to obj2', required=False)
+parser.add_argument('--obj3', help='path to obj3', required=False)
+parser.add_argument('--obj4', help='path to obj4', required=False)
+
 
 args = parser.parse_args()
 
-roomfile = open(syspath + mudpath + args.name + ".c", "w")
-#print args.short
-#print args.long
+roomfile = open(args.syspath + args.name + ".c", "w")
 
 roomfile.write('inherit "/std/room";\n\n')
+roomfile.write('inherit "'+args.domain+'");\n\n')
+
 roomfile.write('void setup( void ) {\n')
 roomfile.write('  add_area( "' + args.area + '" );\n')
 if args.scolor is None:
@@ -40,7 +55,20 @@ if args.lcolor is None:
 else:
   roomfile.write('  set_long( "%^' + args.lcolor + '%^' + args.long + '%^RESET%^" );\n\n')
 
-print syspath + mudpath
+
+# item code here
+if args.item1 is not None:
+  if args.item1desc is not None:
+    roomfile.write('  add_item("' + args.item1 + '", "' + args.item1desc + '");' )
+if args.item2 is not None:
+  if args.item2desc is not None:
+    roomfile.write('  add_item("' + args.item2 + '", "' + args.item2desc + '");' )
+if args.item3 is not None:
+  if args.item3desc is not None:
+    roomfile.write('  add_item("' + args.item3 + '", "' + args.item3desc + '");' )
+if args.item4 is not None:
+  if args.item4desc is not None:
+    roomfile.write('  add_item("' + args.item4 + '", "' + args.item4desc + '");' )
 
 # exits code here
 exits = []
@@ -65,6 +93,28 @@ if args.up is not None:
 if args.down is not None:
   exits.append(["down", args.down ])
 
+objects = []
+if args.obj1 is not None:
+  objects.append([args.obj1])
+if args.obj2 is not None:
+  objects.append([args.obj2])
+if args.obj3 is not None:
+  objects.append([args.obj3])
+if args.obj4 is not None:
+  objects.append([args.obj4])
+
+if objects is not None:
+  roomfile.write( '  set_objects( ([\n)
+  objcount = len(objects)
+  objnum = 0
+  for object in objects:
+    objnum += 1
+    if objcount == objnum:
+      roomfile.write( '    DIR + "' + object + '"\n' )
+    else:
+      roomfile.write( '    DIR + "' + object + '",\n' )
+  roomfile.write('  );\n\n')
+
 if exits is not None:
   roomfile.write(' set_exits( ([\n')
   exitcount = len(exits)
@@ -72,9 +122,9 @@ if exits is not None:
   for exit in exits:
     exitnum += 1
     if exitcount == exitnum:
-      roomfile.write('          "' + exit[0] + '" : "' + mudpath + exit[1] + '"\n')
+      roomfile.write('          "' + exit[0] + '" : " DIR + "' + exit[1] + '"\n')
     else:
-      roomfile.write('          "' + exit[0] + '" : "' + mudpath + exit[1] + '",\n')
+      roomfile.write('          "' + exit[0] + '" : " DIR + "' + exit[1] + '",\n')
 
 # end code here
 roomfile.write('  ]) );\n')
