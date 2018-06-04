@@ -36,9 +36,11 @@ parser.add_argument('--obj4', help='path to obj4', required=False)
 args = parser.parse_args()
 
 roomfile = open(args.syspath + args.name + ".c", "w")
+print args.syspath + args.name + ".c"
+
 
 roomfile.write('inherit "/std/room";\n\n')
-roomfile.write('inherit "'+args.domain+'";\n\n')
+roomfile.write('#include "'+args.domain+'"\n\n')
 
 roomfile.write('void setup( void ) {\n')
 roomfile.write('  add_area( "' + args.area + '" );\n')
@@ -106,9 +108,9 @@ if objects:
   for object in objects:
     objnum += 1
     if objcount == objnum:
-      roomfile.write( '    DIR + "' + object[0] + '"\n' )
+      roomfile.write( ' DIR+"/obj/' + object[0] + '.c"\n' )
     else:
-      roomfile.write( '    DIR + "' + object[0] + '",\n' )
+      roomfile.write( ' DIR+"/obj/' + object[0] + '.c",\n' )
   roomfile.write('  );\n\n')
 
 if exits:
@@ -118,9 +120,9 @@ if exits:
   for exit in exits:
     exitnum += 1
     if exitcount == exitnum:
-      roomfile.write('          "' + exit[0] + '" : " DIR + "' + exit[1] + '"\n')
+      roomfile.write( '  "' + exit[0] + '" : ' + 'DIR+"/room/' + exit[1] + '.c"\n' )
     else:
-      roomfile.write('          "' + exit[0] + '" : " DIR + "' + exit[1] + '",\n')
+      roomfile.write( '  "' + exit[0] + '" : ' + 'DIR+"/room/' + exit[1] + '.c",\n' )
 
 # end code here
 roomfile.write('  ]) );\n')
