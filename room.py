@@ -38,7 +38,7 @@ args = parser.parse_args()
 roomfile = open(args.syspath + args.name + ".c", "w")
 
 roomfile.write('inherit "/std/room";\n\n')
-roomfile.write('inherit "'+args.domain+'");\n\n')
+roomfile.write('inherit "'+args.domain+'";\n\n')
 
 roomfile.write('void setup( void ) {\n')
 roomfile.write('  add_area( "' + args.area + '" );\n')
