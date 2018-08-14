@@ -39,8 +39,9 @@ python room_p.py --area sewer --name 3-q --northwest 1 --south 1
 python room_p.py --area sewer --name 4-b --northeast 1 --south 1 
 python room_p.py --area sewer --name 4-c --north 1 --south 1 
 python room_p.py --area sewer --name 4-d --north 1 --northeast 1 --southeast 1 --southwest 1 
-python room_p.py --area sewer --name 4-e --northeast 1 
-python room_p.py --area sewer --name 4-f --east 1 --south 1 
+python room_p.py --area sewer --name 4-e --northeast 1 --up '../../../domains/required/rooms/start' 
+python room_p.py --area sewer --name 4-f --east 1 --south 1
+python room_p.py --area sewer --name 4-g --west 1 --east 1 
 python room_p.py --area sewer --name 4-h --northwest 1 --west 1 --east 1 
 python room_p.py --area sewer --name 4-i --west 1 --south 1 --southeast 1 
 python room_p.py --area sewer --name 4-j --north 1 --east 1 
@@ -135,9 +136,9 @@ python room_p.py --area sewer --name 9-f --north 1 --east 1
 python room_p.py --area sewer --name 9-g --north 1 --west 1 --east 1 
 python room_p.py --area sewer --name 9-h --north 1 --west 1 
 python room_p.py --area sewer --name 9-i --north 1 --northwest 1 --southeast 1 
-python room_p.py --area sewer --name 9-j --east 1 
+python room_p.py --area sewer --name 9-j --east 1 --down "100-j" 
 python room_p.py --area sewer --name 9-k --north 1 --west 1 --southwest 1 
-python room_p.py --area sewer --name 9-l --north 1 --north 1 
+python room_p.py --area sewer --name 9-l --north 1 --south 1 --east 1 
 python room_p.py --area sewer --name 9-m --west 1 --north 1 --east 1 
 python room_p.py --area sewer --name 9-n --west 1 --north 1 --east 1 
 python room_p.py --area sewer --name 9-o --west 1 --east 1 
@@ -154,7 +155,7 @@ python room_p.py --area sewer --name 10-e --west 1 --east 1
 python room_p.py --area sewer --name 10-f --west 1 --east 1 
 python room_p.py --area sewer --name 10-h --west 1 --east 1 
 python room_p.py --area sewer --name 10-i --west 1 --south 1 
-python room_p.py --area sewer --name 10-j --northwest 1 --northeast 1 --southwest 1 --southeast 1 
+python room_p.py --area sewer --name 10-j --northwest 1 --northeast 1 --southwest 1 --southeast 1
 python room_p.py --area sewer --name 10-k --east 1 --southeast 1 
 python room_p.py --area sewer --name 10-l --north 1 --west 1 --south 1 
 python room_p.py --area sewer --name 11-a --north 1 --south 1 
@@ -192,7 +193,7 @@ python room_p.py --area sewer --name 12-n --southwest 1 --west 1
 python room_p.py --area sewer --name 12-o --southwest 1 --south 1 --south 1 
 python room_p.py --area sewer --name 12-p --south 1 
 python room_p.py --area sewer --name 12-q --north 1 --northwest 1 --southeast 1 
-python room_p.py --area sewer --name 12-r --south 1 
+python room_p.py --area sewer --name 12-r --south 1 --down "100-r"
 python room_p.py --area sewer --name 12-s --north 1 --south 1 
 python room_p.py --area sewer --name 13-a --north 1 --south 1 
 python room_p.py --area sewer --name 13-b --north 1 --south 1 --east 1 
@@ -206,7 +207,7 @@ python room_p.py --area sewer --name 13-i --north 1 --south 1 --west 1
 python room_p.py --area sewer --name 13-j --north 1 --south 1 
 python room_p.py --area sewer --name 13-k --north 1 --south 1 
 python room_p.py --area sewer --name 13-l --north 1 --south 1 
-python room_p.py --area sewer --name 13-m --northeast 1 --south 1 
+python room_p.py --area sewer --name 13-m --northeast 1 --south 1 --down "100-m" 
 python room_p.py --area sewer --name 13-n --northeast 1 --south 1 
 python room_p.py --area sewer --name 13-o --north 1 --east 1 
 python room_p.py --area sewer --name 13-p --north 1 --west 1 --east 1 
@@ -247,7 +248,7 @@ python room_p.py --area sewer --name 15-m --west 1 --east 1
 python room_p.py --area sewer --name 15-n --west 1 --east 1 
 python room_p.py --area sewer --name 15-o --west 1 --south 1 
 python room_p.py --area sewer --name 15-p --northeast 1 --south 1 
-python room_p.py --area sewer --name 15-q --north 1 
+python room_p.py --area sewer --name 15-q --north 1 --down "100-q" 
 python room_p.py --area sewer --name 15-r --northeast 1 --south 1 
 python room_p.py --area sewer --name 16-b --north 1 --southeast 1 
 python room_p.py --area sewer --name 16-c --north 1 --southeast 1 
@@ -302,3 +303,7 @@ python room_p.py --area sewer --name 19-k --west 1 --east 1
 python room_p.py --area sewer --name 19-l --west 1 --east 1 
 python room_p.py --area sewer --name 19-m --west 1 --northwest 1 --east 1 
 python room_p.py --area sewer --name 19-n --west 1 --northeast 1 
+python room_p.py --area sewer --name 100-j --up 9-j
+python room_p.py --area sewer --name 100-r --up 12-r 
+python room_p.py --area sewer --name 100-m --up 13-m 
+python room_p.py --area sewer --name 100-q --up 15-q 

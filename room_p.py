@@ -7,7 +7,8 @@ domain = "../domain.h"
 floors = ['stone', 'jade', 'marble', 'obsidian', 'limestone', 'quartz', 'basalt']
 walls = ['slime', 'blood', 'oil', 'mud', 'dust', 'liquid']
 colors = ['red', 'green', 'purple', 'blue', 'orange', 'iridium']
-mobs = ['dirtycow.c', 'heartbleed.c', 'ms17-010', 'rowhammer', 'ms08-067', 'wpad']
+mobs = ["average_eel_6","average_ferret_6","average_lizard_6","average_parrot_6","average_rat_6","average_snake_6","mediocre_alligator_4","mediocre_eel_4","mediocre_ferret_4","mediocre_lizard_4","mediocre_parrot_4","mediocre_snake_4","meh_eel_3","meh_ferret_3","meh_mouse_3","meh_parrot_3","meh_rat_3","meh_snake_3","newbie_alligator_2","newbie_eel_2","newbie_ferret_2","newbie_lizard_2","newbie_rat_2","newbie_snake_2","newbie_worm_2","strong_eel_7","strong_ferret_7","strong_lizard_7","strong_mouse_7","strong_snake_7","strong_worm_7","sub-average_eel_5","sub-average_ferret_5","sub-average_lizard_5","sub-average_mouse_5","sub-average_parrot_5","sub-average_rat_5","sub-average_worm_5","uninitiated_alligator_1","uninitiated_eel_1","uninitiated_ferret_1","uninitiated_lizard_1","uninitiated_parrot_1","uninitiated_rat_1","uninitiated_snake_1"]
+
 #ldesc="The floors and walls appear to be made of " + (random.choice(floors)) + " while the roof appears to be dripping some kind of " + (random.choice(colors)) + " liquid.  The floors and wall also appear to be covered in some kind of " + (random.choice(walls)) + "."
 
 l_desc_option_list_1a = ['broad', 'narrow', 'wide', 'cramped']

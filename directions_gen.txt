@@ -40,6 +40,7 @@
 4-d:n,ne,se,sw
 4-e:ne
 4-f:e,s
+4-g:w,e
 4-h:nw,w,e
 4-i:w,s,se
 4-j:n,e
@@ -136,7 +137,7 @@
 9-i:n,nw,se
 9-j:e
 9-k:n,w,sw
-9-l:n,es
+9-l:n,e,s
 9-m:w,n,e
 9-n:w,n,e
 9-o:w,e
