@@ -2,14 +2,14 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--name', help='room name', required=True)
-#parser.add_argument('--domain', help='path to domain include ../domain.h', required=True)
-#parser.add_argument('--syspath', help='system path to drop files', required=True)
+# parser.add_argument('--domain', help='path to domain include ../domain.h', required=True)
+# parser.add_argument('--syspath', help='system path to drop files', required=True)
 parser.add_argument('--short', help='short desc', required=True)
 parser.add_argument('--scolor', help='short desc color', required=False)
 parser.add_argument('--long', help='long desc', required=True)
 parser.add_argument('--lcolor', help='long desc color', required=False)
 parser.add_argument('--area', help='area', required=False)
-parser.add_argument('--north', help='path to north exit', required=False) 
+parser.add_argument('--north', help='path to north exit', required=False)
 parser.add_argument('--south', help='path to south exit', required=False)
 parser.add_argument('--east', help='path to east exit', required=False)
 parser.add_argument('--west', help='path to west exit', required=False)
@@ -52,196 +52,191 @@ parser.add_argument('--obj6', help='path to obj6', required=False)
 
 args = parser.parse_args()
 
-coords = args.name.replace("x", "").replace("y", ",").replace("z", ",") .split(",")
-x_coord=coords[0]
-y_coord=coords[1]
-z_coord=coords[2]
-x_int=int(coords[0])
-y_int=int(coords[1])
-z_int=int(coords[2])
+coords = args.name.replace("x", "").replace("y", ",").replace("z", ",").split(",")
+x_coord = coords[0]
+y_coord = coords[1]
+z_coord = coords[2]
+x_int = int(coords[0])
+y_int = int(coords[1])
+z_int = int(coords[2])
 
-
-#print "x: " + str(x_int)
-#print "y: " + str(y_int)
-#print "z: " + str(z_int)
-print args.name 
+# print "x: " + str(x_int)
+# print "y: " + str(y_int)
+# print "z: " + str(z_int)
+print args.name
 
 syspath = "/Users/dustin.heywood1@ibm.com/git/gurba/lib/domains/core/rooms/"
 roomfile = open(syspath + args.name + ".c", "w")
-#print args.syspath + args.name + ".c"
+# print args.syspath + args.name + ".c"
 
 
 roomfile.write('inherit "/std/room";\n\n')
 roomfile.write('#include "../domain.h" \n\n')
 
 if args.area == None:
-  args.area = "city"
+    args.area = "city"
 
 roomfile.write('void setup( void ) {\n')
 roomfile.write('  add_area( "' + args.area + '" );\n')
 if args.scolor is None:
-  roomfile.write('  set_short( "' + args.short + '" );\n')
+    roomfile.write('  set_short( "' + args.short + '" );\n')
 else:
-  roomfile.write('  set_short( "%^' + args.scolor + '%^' + args.short + '%^RESET%^" );\n')
+    roomfile.write('  set_short( "%^' + args.scolor + '%^' + args.short + '%^RESET%^" );\n')
 if args.lcolor is None:
-  roomfile.write('  set_long( "' + args.long + '" );\n\n')
+    roomfile.write('  set_long( "' + args.long + '" );\n\n')
 else:
-  roomfile.write('  set_long( "%^' + args.lcolor + '%^' + args.long + '%^RESET%^" );\n\n')
-
+    roomfile.write('  set_long( "%^' + args.lcolor + '%^' + args.long + '%^RESET%^" );\n\n')
 
 # item code here
 if args.item1 is not None:
-  if args.item1desc is not None:
-    roomfile.write('  add_item("' + args.item1 + '", "' + args.item1desc + '");\n' )
+    if args.item1desc is not None:
+        roomfile.write('  add_item("' + args.item1 + '", "' + args.item1desc + '");\n')
 if args.item2 is not None:
-  if args.item2desc is not None:
-    roomfile.write('  add_item("' + args.item2 + '", "' + args.item2desc + '");\n' )
+    if args.item2desc is not None:
+        roomfile.write('  add_item("' + args.item2 + '", "' + args.item2desc + '");\n')
 if args.item3 is not None:
-  if args.item3desc is not None:
-    roomfile.write('  add_item("' + args.item3 + '", "' + args.item3desc + '");\n' )
+    if args.item3desc is not None:
+        roomfile.write('  add_item("' + args.item3 + '", "' + args.item3desc + '");\n')
 if args.item4 is not None:
-  if args.item4desc is not None:
-    roomfile.write('  add_item("' + args.item4 + '", "' + args.item4desc + '");\n' )
+    if args.item4desc is not None:
+        roomfile.write('  add_item("' + args.item4 + '", "' + args.item4desc + '");\n')
 
 # exits code here
 exits = []
-hexits= []
+hexits = []
 
 if args.north is not None:
-  new_yint = y_int + int(int(args.north)*10)
-  exits.append(["north", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int + int(int(args.north) * 10)
+    exits.append(["north", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
 if args.south is not None:
-  new_yint = y_int - int(int(args.south)*10)
-  exits.append(["south", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int - int(int(args.south) * 10)
+    exits.append(["south", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
 if args.east is not None:
-  new_xint = x_int + int(int(args.east)*10)
-  exits.append(["east", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord ])
+    new_xint = x_int + int(int(args.east) * 10)
+    exits.append(["east", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
 if args.west is not None:
-  new_xint = x_int - int(int(args.west)*10)
-  exits.append(["west", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord ])
+    new_xint = x_int - int(int(args.west) * 10)
+    exits.append(["west", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
 if args.northeast is not None:
-  new_yint = y_int + int(int(args.northeast)*10)
-  new_xint = x_int + int(int(args.northeast)*10)
-  exits.append(["northeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int + int(int(args.northeast) * 10)
+    new_xint = x_int + int(int(args.northeast) * 10)
+    exits.append(["northeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.northwest is not None:
-  new_yint = y_int + int(int(args.northwest)*10)
-  new_xint = x_int - int(int(args.northwest)*10)
-  exits.append(["northwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int + int(int(args.northwest) * 10)
+    new_xint = x_int - int(int(args.northwest) * 10)
+    exits.append(["northwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.southeast is not None:
-  new_yint = y_int - int(int(args.southeast)*10)
-  new_xint = x_int + int(int(args.southeast)*10)
-  exits.append(["southeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int - int(int(args.southeast) * 10)
+    new_xint = x_int + int(int(args.southeast) * 10)
+    exits.append(["southeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.southwest is not None:
-  new_yint = y_int - int(int(args.southwest)*10)
-  new_xint = x_int - int(int(args.southwest)*10)
-  exits.append(["southwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int - int(int(args.southwest) * 10)
+    new_xint = x_int - int(int(args.southwest) * 10)
+    exits.append(["southwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.up is not None:
-  new_zint = z_int + int(int(args.up)*10)
-  exits.append(["up", "x" + x_coord + "y" + y_coord + "z" + str(new_zint) ])
+    new_zint = z_int + int(int(args.up) * 10)
+    exits.append(["up", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
 if args.down is not None:
-  new_zint = z_int - int(int(args.down)*10)
-  exits.append(["down", "x" + x_coord + "y" + y_coord + "z" + str(new_zint) ])
+    new_zint = z_int - int(int(args.down) * 10)
+    exits.append(["down", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
 
-#hidden exits
+# hidden exits
 if args.hnorth is not None:
-  new_yint = y_int + int(int(args.hnorth)*10)
-  hexits.append(["north", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int + int(int(args.hnorth) * 10)
+    hexits.append(["north", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
 if args.hsouth is not None:
-  new_yint = y_int - int(int(args.hsouth)*10)
-  hexits.append(["south", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int - int(int(args.hsouth) * 10)
+    hexits.append(["south", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
 if args.heast is not None:
-  new_xint = x_int + int(int(args.heast)*10)
-  hexits.append(["east", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord ])
+    new_xint = x_int + int(int(args.heast) * 10)
+    hexits.append(["east", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
 if args.hwest is not None:
-  new_xint = x_int - int(int(args.hwest)*10)
-  hexits.append(["west", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord ])
+    new_xint = x_int - int(int(args.hwest) * 10)
+    hexits.append(["west", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
 if args.hnortheast is not None:
-  new_yint = y_int + int(int(args.hnortheast)*10)
-  new_xint = x_int + int(int(args.hnortheast)*10)
-  hexits.append(["northeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int + int(int(args.hnortheast) * 10)
+    new_xint = x_int + int(int(args.hnortheast) * 10)
+    hexits.append(["northeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.hnorthwest is not None:
-  new_yint = y_int + int(int(args.hnorthwest)*10)
-  new_xint = x_int - int(int(args.hnorthwest)*10)
-  hexits.append(["northwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int + int(int(args.hnorthwest) * 10)
+    new_xint = x_int - int(int(args.hnorthwest) * 10)
+    hexits.append(["northwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.hsoutheast is not None:
-  new_yint = y_int - int(int(args.hsoutheast)*10)
-  new_xint = x_int + int(int(args.hsoutheast)*10)
-  hexits.append(["southeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int - int(int(args.hsoutheast) * 10)
+    new_xint = x_int + int(int(args.hsoutheast) * 10)
+    hexits.append(["southeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.hsouthwest is not None:
-  new_yint = y_int - int(int(args.hsouthwest)*10)
-  new_xint = x_int - int(int(args.hsouthwest)*10)
-  hexits.append(["southwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord ])
+    new_yint = y_int - int(int(args.hsouthwest) * 10)
+    new_xint = x_int - int(int(args.hsouthwest) * 10)
+    hexits.append(["southwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.hup is not None:
-  new_zint = z_int + int(int(args.hup)*10)
-  hexits.append(["up", "x" + x_coord + "y" + y_coord + "z" + str(new_zint) ])
+    new_zint = z_int + int(int(args.hup) * 10)
+    hexits.append(["up", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
 if args.hdown is not None:
-  new_zint = z_int - int(int(args.hdown)*10)
-  hexits.append(["down", "x" + x_coord + "y" + y_coord + "z" + str(new_zint) ])
+    new_zint = z_int - int(int(args.hdown) * 10)
+    hexits.append(["down", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
 if args.panel is not None:
-  hexits.append(["panel", args.panel])
+    hexits.append(["panel", args.panel])
 if args.vent is not None:
-  hexits.append(["vent", args.vent])
+    hexits.append(["vent", args.vent])
 if args.pipe is not None:
-  hexits.append(["pipe", args.pipe])
+    hexits.append(["pipe", args.pipe])
 if args.hole is not None:
-  hexits.append(["hole", args.hole])
+    hexits.append(["hole", args.hole])
 if args.pushwall is not None:
-  hexits.append(["push wall", args.pushwall])
+    hexits.append(["push wall", args.pushwall])
 
 objects = []
 if args.obj1 is not None:
-  objects.append([args.obj1])
+    objects.append([args.obj1])
 if args.obj2 is not None:
-  objects.append([args.obj2])
+    objects.append([args.obj2])
 if args.obj3 is not None:
-  objects.append([args.obj3])
+    objects.append([args.obj3])
 if args.obj4 is not None:
-  objects.append([args.obj4])
+    objects.append([args.obj4])
 if args.obj5 is not None:
-  objects.append([args.obj5])
+    objects.append([args.obj5])
 if args.obj6 is not None:
-  objects.append([args.obj6])
-
+    objects.append([args.obj6])
 
 if objects:
-  roomfile.write( '\n  set_objects( \n' )
-  objcount = len(objects)
-  objnum = 0
-  for object in objects:
-    objnum += 1
-    if objcount == objnum:
-      roomfile.write( ' DIR+"/monsters/' + object[0] + '.c"\n' )
-    else:
-      roomfile.write( ' DIR+"/monsters/' + object[0] + '.c", \n' )
-  roomfile.write(');\n')
+    roomfile.write('\n  set_objects( \n')
+    objcount = len(objects)
+    objnum = 0
+    for object in objects:
+        objnum += 1
+        if objcount == objnum:
+            roomfile.write(' DIR+"/monsters/' + object[0] + '.c"\n')
+        else:
+            roomfile.write(' DIR+"/monsters/' + object[0] + '.c", \n')
+    roomfile.write(');\n')
 
 if exits:
-  roomfile.write(' set_exits( ([\n')
-  exitcount = len(exits)
-  exitnum = 0
-  for exit in exits:
-    exitnum += 1
-    if exitcount == exitnum:
-      roomfile.write( '  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c"\n' )
-    else:
-      roomfile.write( '  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c",\n' )
-  roomfile.write('  ]) );\n')
+    roomfile.write(' set_exits( ([\n')
+    exitcount = len(exits)
+    exitnum = 0
+    for exit in exits:
+        exitnum += 1
+        if exitcount == exitnum:
+            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c"\n')
+        else:
+            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c",\n')
+    roomfile.write('  ]) );\n')
 
 if hexits:
-  roomfile.write(' set_hidden_exits( ([\n')
-  exitcount = len(exits)
-  exitnum = 0
-  for exit in hexits:
-    exitnum += 1
-    if exitcount == exitnum:
-      roomfile.write( '  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c"\n' )
-    else:
-      roomfile.write( '  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c",\n' )
-  roomfile.write('  ]) );\n')
-
+    roomfile.write(' set_hidden_exits( ([\n')
+    exitcount = len(exits)
+    exitnum = 0
+    for exit in hexits:
+        exitnum += 1
+        if exitcount == exitnum:
+            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c"\n')
+        else:
+            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c",\n')
+    roomfile.write('  ]) );\n')
 
 # end code here
-
 
 
 roomfile.write('}\n')

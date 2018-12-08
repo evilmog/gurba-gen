@@ -1,6 +1,5 @@
 import argparse
 
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--file', help='npc file', required=True)
 
@@ -32,49 +31,46 @@ parser.add_argument('--slvl5', help='secondary skill level, eg: 100', required=F
 args = parser.parse_args()
 
 npcfile = open(args.syspath + args.file + ".c", "w")
-#print args.short
-#print args.long
 
 npcfile.write('inherit "/std/monster";\n\n')
-roomfile.write('inherit "'+args.domain+'");\n\n')
+npcfile.write('inherit "' + args.domain + '");\n\n')
 
 npcfile.write('void setup( void ) {\n')
-npcfile.write('  set_name("'+args.name+'");\n')
+npcfile.write('  set_name("' + args.name + '");\n')
 if args.adj is not None:
-  npcfile.write('  add_adj("'+args.adj+'");\n')
+    npcfile.write('  add_adj("' + args.adj + '");\n')
 if args.adj2 is not None:
-  npcfile.write('  add_adj("'+args.adj2+'");\n')
+    npcfile.write('  add_adj("' + args.adj2 + '");\n')
 if args.adj3 is not None:
-  npcfile.write('  add_adj("'+args.adj3+'");\n')
+    npcfile.write('  add_adj("' + args.adj3 + '");\n')
 if args.adj4 is not None:
-  npcfile.write('  add_adj("'+args.adj4+'");\n')
+    npcfile.write('  add_adj("' + args.adj4 + '");\n')
 if args.scolor is None:
-  npcfile.write('  set_short( "' + args.short + '" );\n')
+    npcfile.write('  set_short( "' + args.short + '" );\n')
 else:
-  npcfile.write('  set_short( "%^' + args.scolor + '%^' + args.short + '%^RESET%^" );\n')
+    npcfile.write('  set_short( "%^' + args.scolor + '%^' + args.short + '%^RESET%^" );\n')
 if args.lcolor is None:
-  npcfile.write('  set_long( "' + args.long + '" );\n\n')
+    npcfile.write('  set_long( "' + args.long + '" );\n\n')
 else:
-  npcfile.write('  set_long( "%^' + args.lcolor + '%^' + args.long + '%^RESET%^" );\n\n')
-npcfile.write('  set_gender("'+args.gender+'");\n')
-npcfile.write('  set_race("'+args.race+'");\n\n')
-npcfile.write('  set_level('+str(args.level)+');\n\n')
+    npcfile.write('  set_long( "%^' + args.lcolor + '%^' + args.long + '%^RESET%^" );\n\n')
+npcfile.write('  set_gender("' + args.gender + '");\n')
+npcfile.write('  set_race("' + args.race + '");\n\n')
+npcfile.write('  set_level(' + str(args.level) + ');\n\n')
 npcfile.write('  set_hit_skill("' + args.primary + '");\n')
 npcfile.write('  set_skill("' + args.primary + '", ' + str(args.plvl) + ');\n')
 
 if args.skill2 is not None:
-  if args.slvl2 is not None:
-    npcfile.write('  set_skill("' + args.skill2 + '", ' + str(args.slvl2) + ');\n')
+    if args.slvl2 is not None:
+        npcfile.write('  set_skill("' + args.skill2 + '", ' + str(args.slvl2) + ');\n')
 if args.skill3 is not None:
-  if args.slvl3 is not None:
-    npcfile.write('  set_skill("' + args.skill3 + '", ' + str(args.slvl3) + ');\n')
+    if args.slvl3 is not None:
+        npcfile.write('  set_skill("' + args.skill3 + '", ' + str(args.slvl3) + ');\n')
 if args.skill4 is not None:
-  if args.slvl4 is not None:
-    npcfile.write('  set_skill("' + args.skill4 + '", ' + str(args.slvl4) + ');\n')
+    if args.slvl4 is not None:
+        npcfile.write('  set_skill("' + args.skill4 + '", ' + str(args.slvl4) + ');\n')
 if args.skill5 is not None:
-  if args.slvl5 is not None:
-    npcfile.write('  set_skill("' + args.skill5 + '", ' + str(args.slvl5) + ');\n')
-
+    if args.slvl5 is not None:
+        npcfile.write('  set_skill("' + args.skill5 + '", ' + str(args.slvl5) + ');\n')
 
 # end code here
 npcfile.write('}\n')
