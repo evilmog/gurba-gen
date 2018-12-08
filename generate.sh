@@ -1,4 +1,5 @@
-python room_p.py --area sewer --name 1-f --southwest 1 --east 1 
+#!/usr/bin/env bash
+python room_p.py --area sewer --name 1-f --southwest 1 --east 1
 python room_p.py --area sewer --name 1-g --west 1 --south 1 --east 1 
 python room_p.py --area sewer --name 1-h --west 1 --east 1 
 python room_p.py --area sewer --name 1-i --west 1 --south 1 --southeast 1 

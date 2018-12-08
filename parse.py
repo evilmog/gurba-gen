@@ -10,22 +10,22 @@ for line in lines:
     exitcode = str(" ")
     lexit = str("")
 
-    for exit in exits:
-        if exit == 'nw':
+    for roomexit in exits:
+      if roomexit == 'nw':
             exitcode = "--northwest 1 "
-        if exit == 'n':
+      if roomexit == 'n':
             exitcode = "--north 1 "
-        if exit == 'ne':
+      if roomexit == 'ne':
             exitcode = "--northeast 1 "
-        if exit == 'w':
+      if roomexit == 'w':
             exitcode = "--west 1 "
-        if exit == 'e':
+      if roomexit == 'e':
             exitcode = "--east 1 "
-        if exit == 'sw':
+      if roomexit == 'sw':
             exitcode = "--southwest 1 "
-        if exit == 's':
+      if roomexit == 's':
             exitcode = "--south 1 "
-        if exit == 'se':
+      if roomexit == 'se':
             exitcode = "--southeast 1 "
         lexit += exitcode
 

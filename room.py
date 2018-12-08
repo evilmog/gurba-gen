@@ -102,24 +102,24 @@ if objects:
     roomfile.write('\n  set_objects( ([\n')
     objcount = len(objects)
     objnum = 0
-    for object in objects:
+    for roomobject in objects:
         objnum += 1
         if objcount == objnum:
-            roomfile.write(' DIR+"/obj/' + object[0] + '.c"\n')
+          roomfile.write(' DIR+"/obj/' + roomobject[0] + '.c"\n')
         else:
-            roomfile.write(' DIR+"/obj/' + object[0] + '.c",\n')
+          roomfile.write(' DIR+"/obj/' + roomobject[0] + '.c",\n')
     roomfile.write('  );\n\n')
 
 if exits:
     roomfile.write(' set_exits( ([\n')
     exitcount = len(exits)
     exitnum = 0
-    for exit in exits:
+    for roomexit in exits:
         exitnum += 1
         if exitcount == exitnum:
-            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/room/' + exit[1] + '.c"\n')
+          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/room/' + roomexit[1] + '.c"\n')
         else:
-            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/room/' + exit[1] + '.c",\n')
+          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/room/' + roomexit[1] + '.c",\n')
 
 # end code here
 roomfile.write('  ]) );\n')

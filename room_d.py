@@ -90,12 +90,12 @@ if exits:
     roomfile.write(' set_exits( ([\n')
     exitcount = len(exits)
     exitnum = 0
-    for exit in exits:
+    for roomexit in exits:
         exitnum += 1
         if exitcount == exitnum:
-            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c"\n')
+          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c"\n')
         else:
-            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c",\n')
+          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c",\n')
 
 roomfile.write('  ]) );\n')
 

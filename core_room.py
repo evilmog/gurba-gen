@@ -73,7 +73,7 @@ roomfile = open(syspath + args.name + ".c", "w")
 roomfile.write('inherit "/std/room";\n\n')
 roomfile.write('#include "../domain.h" \n\n')
 
-if args.area == None:
+if args.area is None:
     args.area = "city"
 
 roomfile.write('void setup( void ) {\n')
@@ -204,36 +204,36 @@ if objects:
     roomfile.write('\n  set_objects( \n')
     objcount = len(objects)
     objnum = 0
-    for object in objects:
+    for roomobject in objects:
         objnum += 1
         if objcount == objnum:
-            roomfile.write(' DIR+"/monsters/' + object[0] + '.c"\n')
+          roomfile.write(' DIR+"/monsters/' + roomobject[0] + '.c"\n')
         else:
-            roomfile.write(' DIR+"/monsters/' + object[0] + '.c", \n')
+          roomfile.write(' DIR+"/monsters/' + roomobject[0] + '.c", \n')
     roomfile.write(');\n')
 
 if exits:
     roomfile.write(' set_exits( ([\n')
     exitcount = len(exits)
     exitnum = 0
-    for exit in exits:
+    for roomexit in exits:
         exitnum += 1
         if exitcount == exitnum:
-            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c"\n')
+          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c"\n')
         else:
-            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c",\n')
+          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c",\n')
     roomfile.write('  ]) );\n')
 
 if hexits:
     roomfile.write(' set_hidden_exits( ([\n')
     exitcount = len(exits)
     exitnum = 0
-    for exit in hexits:
+    for roomexit in hexits:
         exitnum += 1
         if exitcount == exitnum:
-            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c"\n')
+          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c"\n')
         else:
-            roomfile.write('  "' + exit[0] + '" : ' + 'DIR+"/rooms/' + exit[1] + '.c",\n')
+          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c",\n')
     roomfile.write('  ]) );\n')
 
 # end code here
