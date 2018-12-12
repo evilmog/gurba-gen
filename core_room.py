@@ -76,7 +76,12 @@ roomfile.write('#include "../domain.h" \n\n')
 if args.area is None:
     args.area = "city"
 
-roomfile.write('void setup( void ) {\n')
+roomfile.write('void setup( void ) {\n\n')
+
+roomfile.write('  set_property("x", ' + x_coord + ');\n')
+roomfile.write('  set_property("y", ' + y_coord + ');\n')
+roomfile.write('  set_property("z", ' + z_coord + ');\n')
+
 roomfile.write('  add_area( "' + args.area + '" );\n')
 if args.scolor is None:
     roomfile.write('  set_short( "' + args.short + '" );\n')
