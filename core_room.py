@@ -78,8 +78,6 @@ if args.area is None:
 
 roomfile.write('void setup( void ) {\n\n')
 
-roomfile.write('inherit "/sys/lib/modules/m_properties";\n\n')
-
 roomfile.write('  set_property("x", ' + x_coord + ');\n')
 roomfile.write('  set_property("y", ' + y_coord + ');\n')
 roomfile.write('  set_property("z", ' + z_coord + ');\n\n')
