@@ -8,7 +8,7 @@ parser.add_argument('--south', help='south exit', required=False)
 parser.add_argument('--east', help='east exit', required=False)
 
 args = parser.parse_args()
-longdesc = "This circular room is in the very center of a tiny dome that is a connector for all of the domes in the "\
+longdesc = "This circular room is in the very center of a tiny dome that is a connector for all of the domes in the "
 longdesc += args.name + " District.  Use any exit to be instantly transported via mass-transit tube to the listed"
 longdesc += "destination."
 longdesc += "\n\n"
