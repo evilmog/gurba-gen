@@ -80,11 +80,11 @@ roomfile = open(syspath + args.area + "/" + args.name + ".c", "w")
 
 roomfile.write('inherit "/std/room";\n\n')
 roomfile.write('#include "../../domain.h" \n')
-roomfile.write('#include "area.h"\n\n')
+
 
 
 roomfile.write('void setup( void ) {\n\n')
-
+roomfile.write('  #include "area.h"\n\n')
 roomfile.write('  set_property("x", ' + x_coord + ');\n')
 roomfile.write('  set_property("y", ' + y_coord + ');\n')
 roomfile.write('  set_property("z", ' + z_coord + ');\n\n')
