@@ -121,111 +121,111 @@ if args.north is not None:
     if args.anorth is not None:
         exits.append(["north", args.anorth + "/x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
     else:
-        exits.append(["north", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
+        exits.append(["north", args.area + "/x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
 if args.south is not None:
     new_yint = y_int - int(int(args.south) * 10)
     if args.asouth is not None:
         exits.append(["south", args.asouth + "/x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
     else:
-        exits.append(["south", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
+        exits.append(["south", args.area + "/x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
 if args.east is not None:
     new_xint = x_int + int(int(args.east) * 10)
     if args.aeast is not None:
         exits.append(["east", args.aeast + "/x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
     else:
-        exits.append(["east", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
+        exits.append(["east", args.area + "/x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
 if args.west is not None:
     new_xint = x_int - int(int(args.west) * 10)
     if args.awest is not None:
         exits.append(["west", args.awest + "/x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
     else:
-        exits.append(["west", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
+        exits.append(["west", args.area + "/x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
 if args.northeast is not None:
     new_yint = y_int + int(int(args.northeast) * 10)
     new_xint = x_int + int(int(args.northeast) * 10)
     if args.northeast is not None:
         exits.append(["northeast", args.anortheast + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
     else:
-        exits.append(["northeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+        exits.append(["northeast", args.area + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.northwest is not None:
     new_yint = y_int + int(int(args.northwest) * 10)
     new_xint = x_int - int(int(args.northwest) * 10)
     if args.anorthwest is not None:
         exits.append(["northwest", args.anorthwest + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
     else:
-        exits.append(["northwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+        exits.append(["northwest", args.area + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.southeast is not None:
     new_yint = y_int - int(int(args.southeast) * 10)
     new_xint = x_int + int(int(args.southeast) * 10)
     if args.asoutheast is not None:
         exits.append(["southeast", args.asoutheast + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
     else:
-        exits.append(["southeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+        exits.append(["southeast", args.area + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.southwest is not None:
     new_yint = y_int - int(int(args.southwest) * 10)
     new_xint = x_int - int(int(args.southwest) * 10)
     if args.asouthwest is not None:
         exits.append(["southwest", args.asouthwest + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
     else:
-        exits.append(["southwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+        exits.append(["southwest", args.area + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.up is not None:
     new_zint = z_int + int(int(args.up) * 10)
     if args.aup is not None:
         exits.append(["up", args.aup + "/x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
     else:
-        exits.append(["up", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
+        exits.append(["up", args.area + "/x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
 if args.down is not None:
     new_zint = z_int - int(int(args.down) * 10)
     if args.adown is not None:
         exits.append(["down", args.adown + "/x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
     else:
-        exits.append(["down", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
+        exits.append(["down", args.area + "/x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
 
 # hidden exits
 if args.hnorth is not None:
     new_yint = y_int + int(int(args.hnorth) * 10)
-    hexits.append(["north", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
+    hexits.append(["north", args.area + "/x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
 if args.hsouth is not None:
     new_yint = y_int - int(int(args.hsouth) * 10)
-    hexits.append(["south", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
+    hexits.append(["south", args.area + "/x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
 if args.heast is not None:
     new_xint = x_int + int(int(args.heast) * 10)
-    hexits.append(["east", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
+    hexits.append(["east", args.area + "/x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
 if args.hwest is not None:
     new_xint = x_int - int(int(args.hwest) * 10)
-    hexits.append(["west", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
+    hexits.append(["west", args.area + "/x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
 if args.hnortheast is not None:
     new_yint = y_int + int(int(args.hnortheast) * 10)
     new_xint = x_int + int(int(args.hnortheast) * 10)
-    hexits.append(["northeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    hexits.append(["northeast", args.area + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.hnorthwest is not None:
     new_yint = y_int + int(int(args.hnorthwest) * 10)
     new_xint = x_int - int(int(args.hnorthwest) * 10)
-    hexits.append(["northwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    hexits.append(["northwest", args.area + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.hsoutheast is not None:
     new_yint = y_int - int(int(args.hsoutheast) * 10)
     new_xint = x_int + int(int(args.hsoutheast) * 10)
-    hexits.append(["southeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    hexits.append(["southeast", args.area + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.hsouthwest is not None:
     new_yint = y_int - int(int(args.hsouthwest) * 10)
     new_xint = x_int - int(int(args.hsouthwest) * 10)
-    hexits.append(["southwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    hexits.append(["southwest", args.area + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.hup is not None:
     new_zint = z_int + int(int(args.hup) * 10)
-    hexits.append(["up", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
+    hexits.append(["up", args.area + "/x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
 if args.hdown is not None:
     new_zint = z_int - int(int(args.hdown) * 10)
-    hexits.append(["down", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
+    hexits.append(["down", args.area + "/x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
 if args.panel is not None:
-    hexits.append(["panel", args.panel])
+    hexits.append(["panel", args.area + "/" + args.panel])
 if args.vent is not None:
-    hexits.append(["vent", args.vent])
+    hexits.append(["vent", args.area + "/" + args.vent])
 if args.pipe is not None:
-    hexits.append(["pipe", args.pipe])
+    hexits.append(["pipe", args.area + "/" + args.pipe])
 if args.hole is not None:
-    hexits.append(["hole", args.hole])
+    hexits.append(["hole", args.area + "/" + args.hole])
 if args.pushwall is not None:
-    hexits.append(["push wall", args.pushwall])
+    hexits.append(["push wall", args.area + "/" + args.pushwall])
 
 objects = []
 if args.obj1 is not None:
