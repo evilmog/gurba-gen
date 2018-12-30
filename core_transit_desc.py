@@ -41,5 +41,5 @@ if args.east is not None:
     longdesc += (" " * (30 - len(args.south)))
     longdesc += " %^CYAN%^|%^RESET%^\n"
 longdesc += "%^CYAN%^|                                       |%^RESET%^\n"
-longdesc += "%^CYAN%^+---------------------------------------+%^RESET%^"
+longdesc += "%^CYAN%^+---------------------------------------+%^RESET%^\n"
 print repr(longdesc)
