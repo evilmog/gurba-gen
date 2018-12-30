@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c0ae5d8-19c9-4730-8a87-18a4a6830bc4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/dustin_heywood1_ibm_com.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_east_housing_gen.sh" beforeDir="false" afterPath="$PROJECT_DIR$/core_east_housing_gen.sh" afterDir="false" />
+    <list default="true" id="0c0ae5d8-19c9-4730-8a87-18a4a6830bc4" name="Default Changelist" comment="updates">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_room.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_room.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,34 +13,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core_city_gen.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="467" column="82" selection-start-line="467" selection-start-column="82" selection-end-line="467" selection-end-column="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core_east_housing_gen.sh">
+        <entry file="file://$PROJECT_DIR$/core_room.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-246">
-              <caret line="23" column="694" selection-start-line="23" selection-start-column="694" selection-end-line="23" selection-end-column="694" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core_east_npc.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="184">
+              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>West Mass-Transit Node</find>
+      <find>N - West Mass-Transit Node</find>
+      <find>x0y420z0</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,7 +40,6 @@
         <option value="$PROJECT_DIR$/core_npc.py" />
         <option value="$PROJECT_DIR$/npc.py" />
         <option value="$PROJECT_DIR$/npc_p.py" />
-        <option value="$PROJECT_DIR$/core_room.py" />
         <option value="$PROJECT_DIR$/room.py" />
         <option value="$PROJECT_DIR$/room_d.py" />
         <option value="$PROJECT_DIR$/room_d_old.py" />
@@ -60,7 +48,9 @@
         <option value="$PROJECT_DIR$/core_north_housing_npc.sh" />
         <option value="$PROJECT_DIR$/parse.py" />
         <option value="$PROJECT_DIR$/core_east_npc.sh" />
+        <option value="$PROJECT_DIR$/core_north_housing_gen.sh" />
         <option value="$PROJECT_DIR$/core_east_housing_gen.sh" />
+        <option value="$PROJECT_DIR$/core_room.py" />
       </list>
     </option>
   </component>
@@ -119,7 +109,9 @@
       <updated>1544301418331</updated>
       <workItem from="1544301423104" duration="656000" />
       <workItem from="1544302122693" duration="3043000" />
-      <workItem from="1544405952401" duration="3473000" />
+      <workItem from="1544405952401" duration="4612000" />
+      <workItem from="1544585482764" duration="1720000" />
+      <workItem from="1544896268962" duration="330000" />
     </task>
     <task id="LOCAL-00001" summary="updates to format">
       <created>1544302093646</created>
@@ -198,16 +190,114 @@
       <option name="project" value="LOCAL" />
       <updated>1544409567989</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="new mass transit segments">
+      <created>1544409702252</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1544409702252</updated>
+    </task>
+    <task id="LOCAL-00013" summary="new mass transit segments">
+      <created>1544409868090</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1544409868090</updated>
+    </task>
+    <task id="LOCAL-00014" summary="new mass transit segments">
+      <created>1544410115295</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1544410115295</updated>
+    </task>
+    <task id="LOCAL-00015" summary="new mass transit segments">
+      <created>1544410260627</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1544410260627</updated>
+    </task>
+    <task id="LOCAL-00016" summary="new mass transit segments">
+      <created>1544410388446</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1544410388446</updated>
+    </task>
+    <task id="LOCAL-00017" summary="new mass transit segments">
+      <created>1544410489223</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1544410489223</updated>
+    </task>
+    <task id="LOCAL-00018" summary="new mass transit segments">
+      <created>1544410563635</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1544410563635</updated>
+    </task>
+    <task id="LOCAL-00019" summary="new mass transit segments">
+      <created>1544410636169</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1544410636169</updated>
+    </task>
+    <task id="LOCAL-00020" summary="new mass transit segments">
+      <created>1544410771581</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1544410771581</updated>
+    </task>
+    <task id="LOCAL-00021" summary="new mass transit segments">
+      <created>1544410796136</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1544410796136</updated>
+    </task>
+    <task id="LOCAL-00022" summary="update to add properties">
+      <created>1544589602109</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1544589602109</updated>
+    </task>
+    <task id="LOCAL-00023" summary="new mass transit segments">
+      <created>1544589710895</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1544589710895</updated>
+    </task>
+    <task id="LOCAL-00024" summary="updates">
+      <created>1544590123399</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1544590123399</updated>
+    </task>
+    <task id="LOCAL-00025" summary="updates">
+      <created>1544590397367</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1544590397367</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7172000" />
+    <option name="totallyTimeSpent" value="10361000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="24" width="1260" height="692" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2536946" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26190478" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -221,7 +311,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Inspection Results" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.69666666" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.69666666" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -262,8 +352,10 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="updates to format" />
     <MESSAGE value="typo fix" />
+    <MESSAGE value="update to add properties" />
     <MESSAGE value="new mass transit segments" />
-    <option name="LAST_COMMIT_MESSAGE" value="new mass transit segments" />
+    <MESSAGE value="updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/core_npc.py">
@@ -294,13 +386,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/north_housing_gen.sh">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core_room.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="230" column="8" selection-start-line="230" selection-start-column="8" selection-end-line="230" selection-end-column="8" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/room.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -359,22 +444,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core_city_gen.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
+        <state relative-caret-position="7005">
           <caret line="467" column="82" selection-start-line="467" selection-start-column="82" selection-end-line="467" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core_north_housing_gen.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="383" selection-start-line="5" selection-start-column="383" selection-end-line="5" selection-end-column="383" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core_east_npc.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
+        <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core_east_housing_gen.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-246">
-          <caret line="23" column="694" selection-start-line="23" selection-start-column="694" selection-end-line="23" selection-end-column="694" />
+        <state relative-caret-position="410">
+          <caret line="42" column="813" selection-start-line="42" selection-start-column="813" selection-end-line="42" selection-end-column="813" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core_room.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
         </state>
       </provider>
     </entry>

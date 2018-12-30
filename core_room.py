@@ -212,9 +212,9 @@ if objects:
     for roomobject in objects:
         objnum += 1
         if objcount == objnum:
-          roomfile.write(' DIR+"/monsters/' + roomobject[0] + '.c"\n')
+            roomfile.write(' DIR+"/monsters/' + roomobject[0] + '.c"\n')
         else:
-          roomfile.write(' DIR+"/monsters/' + roomobject[0] + '.c", \n')
+            roomfile.write(' DIR+"/monsters/' + roomobject[0] + '.c", \n')
     roomfile.write(');\n')
 
 if exits:
@@ -224,9 +224,9 @@ if exits:
     for roomexit in exits:
         exitnum += 1
         if exitcount == exitnum:
-          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c"\n')
+            roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c"\n')
         else:
-          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c",\n')
+            roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c",\n')
     roomfile.write('  ]) );\n')
 
 if hexits:
@@ -236,9 +236,9 @@ if hexits:
     for roomexit in hexits:
         exitnum += 1
         if exitcount == exitnum:
-          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c"\n')
+            roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c"\n')
         else:
-          roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c",\n')
+            roomfile.write('  "' + roomexit[0] + '" : ' + 'DIR+"/rooms/' + roomexit[1] + '.c",\n')
     roomfile.write('  ]) );\n')
 
 # end code here
