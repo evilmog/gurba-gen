@@ -19,7 +19,7 @@ longdesc += "D I R E C T O R Y"
 longdesc += "%^CYAN%^"
 longdesc += "------------+"
 longdesc += "\n"
-longdesc += "%^CYAN%^|                                       |%^RESET%^"
+longdesc += "%^CYAN%^|                                       |%^RESET%^\n"
 if args.north is not None:
     longdesc += "%^CYAN%^|%^RESET%^    N - "
     longdesc += args.north
@@ -40,6 +40,6 @@ if args.east is not None:
     longdesc += args.east
     longdesc += (" " * (30 - len(args.south)))
     longdesc += " %^CYAN%^|%^RESET%^\n"
-longdesc += "%^CYAN%^|                                       |%^RESET%^"
+longdesc += "%^CYAN%^|                                       |%^RESET%^\n"
 longdesc += "%^CYAN%^+---------------------------------------+%^RESET%^"
 print repr(longdesc)
