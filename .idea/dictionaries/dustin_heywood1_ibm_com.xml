@@ -3,6 +3,7 @@
     <words>
       <w>exitcount</w>
       <w>exitnum</w>
+      <w>longdesc</w>
       <w>objcount</w>
       <w>objnum</w>
       <w>roomobject</w>
