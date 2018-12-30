@@ -143,7 +143,7 @@ if args.west is not None:
 if args.northeast is not None:
     new_yint = y_int + int(int(args.northeast) * 10)
     new_xint = x_int + int(int(args.northeast) * 10)
-    if args.northeast is not None:
+    if args.anortheast is not None:
         exits.append(["northeast", args.anortheast + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
     else:
         exits.append(["northeast", args.area + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
