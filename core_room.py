@@ -2,23 +2,31 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--name', help='room name', required=True)
-# parser.add_argument('--domain', help='path to domain include ../domain.h', required=True)
-# parser.add_argument('--syspath', help='system path to drop files', required=True)
 parser.add_argument('--short', help='short desc', required=True)
 parser.add_argument('--scolor', help='short desc color', required=False)
 parser.add_argument('--long', help='long desc', required=True)
 parser.add_argument('--lcolor', help='long desc color', required=False)
 parser.add_argument('--area', help='area', required=False)
-parser.add_argument('--north', help='path to north exit', required=False)
-parser.add_argument('--south', help='path to south exit', required=False)
-parser.add_argument('--east', help='path to east exit', required=False)
-parser.add_argument('--west', help='path to west exit', required=False)
-parser.add_argument('--northeast', help='path to northeast exit', required=False)
-parser.add_argument('--northwest', help='path to northwest exit', required=False)
-parser.add_argument('--southeast', help='path to southeast exit', required=False)
-parser.add_argument('--southwest', help='path to southwest exit', required=False)
-parser.add_argument('--up', help='path to up exit', required=False)
-parser.add_argument('--down', help='path to down exit', required=False)
+parser.add_argument('--north', help='units for north exit', required=False)
+parser.add_argument('--anorth', help='area for north exit', required=False)
+parser.add_argument('--south', help='units south exit', required=False)
+parser.add_argument('--asouth', help='area for south exit', required=False)
+parser.add_argument('--east', help='units for east exit', required=False)
+parser.add_argument('--aeast', help='area for east exit', required=False)
+parser.add_argument('--west', help='units for west exit', required=False)
+parser.add_argument('--awest', help='area for west exit', required=False)
+parser.add_argument('--northeast', help='units for northeast exit', required=False)
+parser.add_argument('--anortheast', help='area for northeast exit', required=False)
+parser.add_argument('--northwest', help='units for northwest exit', required=False)
+parser.add_argument('--anorthwest', help='area for northwest exit', required=False)
+parser.add_argument('--southeast', help='units for southeast exit', required=False)
+parser.add_argument('--asoutheast', help='area for southeast exit', required=False)
+parser.add_argument('--southwest', help='units for southwest exit', required=False)
+parser.add_argument('--asouthwest', help='area for southwest exit', required=False)
+parser.add_argument('--up', help='units for up exit', required=False)
+parser.add_argument('--aup', help='area for up exit', required=False)
+parser.add_argument('--down', help='units for down exit', required=False)
+parser.add_argument('--adown', help='area for down exit', required=False)
 parser.add_argument('--hnorth', help='hidden path to north exit', required=False)
 parser.add_argument('--hsouth', help='hidden path to south exit', required=False)
 parser.add_argument('--heast', help='hidden path to east exit', required=False)
@@ -60,21 +68,19 @@ x_int = int(coords[0])
 y_int = int(coords[1])
 z_int = int(coords[2])
 
-# print "x: " + str(x_int)
-# print "y: " + str(y_int)
-# print "z: " + str(z_int)
 print args.name
 
+if args.area is None:
+    args.area = "core"
+
 syspath = "/Users/dustin.heywood1@ibm.com/git/gurba/lib/domains/core/rooms/"
-roomfile = open(syspath + args.name + ".c", "w")
+roomfile = open(syspath + args.area + "/" + args.name + ".c", "w")
 # print args.syspath + args.name + ".c"
 
 
 roomfile.write('inherit "/std/room";\n\n')
 roomfile.write('#include "../domain.h" \n\n')
 
-if args.area is None:
-    args.area = "city"
 
 roomfile.write('void setup( void ) {\n\n')
 
@@ -112,38 +118,68 @@ hexits = []
 
 if args.north is not None:
     new_yint = y_int + int(int(args.north) * 10)
-    exits.append(["north", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
+    if args.anorth is not None:
+        exits.append(["north", args.anorth + "/x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
+    else:
+        exits.append(["north", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
 if args.south is not None:
     new_yint = y_int - int(int(args.south) * 10)
-    exits.append(["south", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
+    if args.asouth is not None:
+        exits.append(["south", args.asouth + "/x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
+    else:
+        exits.append(["south", "x" + x_coord + "y" + str(new_yint) + "z" + z_coord])
 if args.east is not None:
     new_xint = x_int + int(int(args.east) * 10)
-    exits.append(["east", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
+    if args.aeast is not None:
+        exits.append(["east", args.aeast + "/x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
+    else:
+        exits.append(["east", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
 if args.west is not None:
     new_xint = x_int - int(int(args.west) * 10)
-    exits.append(["west", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
+    if args.awest is not None:
+        exits.append(["west", args.awest + "/x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
+    else:
+        exits.append(["west", "x" + str(new_xint) + "y" + y_coord + "z" + z_coord])
 if args.northeast is not None:
     new_yint = y_int + int(int(args.northeast) * 10)
     new_xint = x_int + int(int(args.northeast) * 10)
-    exits.append(["northeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    if args.northeast is not None:
+        exits.append(["northeast", args.anortheast + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    else:
+        exits.append(["northeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.northwest is not None:
     new_yint = y_int + int(int(args.northwest) * 10)
     new_xint = x_int - int(int(args.northwest) * 10)
-    exits.append(["northwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    if args.anorthwest is not None:
+        exits.append(["northwest", args.anorthwest + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    else:
+        exits.append(["northwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.southeast is not None:
     new_yint = y_int - int(int(args.southeast) * 10)
     new_xint = x_int + int(int(args.southeast) * 10)
-    exits.append(["southeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    if args.asoutheast is not None:
+        exits.append(["southeast", args.asoutheast + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    else:
+        exits.append(["southeast", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.southwest is not None:
     new_yint = y_int - int(int(args.southwest) * 10)
     new_xint = x_int - int(int(args.southwest) * 10)
-    exits.append(["southwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    if args.asouthwest is not None:
+        exits.append(["southwest", args.asouthwest + "/x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
+    else:
+        exits.append(["southwest", "x" + str(new_xint) + "y" + str(new_yint) + "z" + z_coord])
 if args.up is not None:
     new_zint = z_int + int(int(args.up) * 10)
-    exits.append(["up", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
+    if args.aup is not None:
+        exits.append(["up", args.aup + "/x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
+    else:
+        exits.append(["up", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
 if args.down is not None:
     new_zint = z_int - int(int(args.down) * 10)
-    exits.append(["down", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
+    if args.adown is not None:
+        exits.append(["down", args.adown + "/x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
+    else:
+        exits.append(["down", "x" + x_coord + "y" + y_coord + "z" + str(new_zint)])
 
 # hidden exits
 if args.hnorth is not None:
