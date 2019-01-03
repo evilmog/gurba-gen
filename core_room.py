@@ -58,6 +58,11 @@ parser.add_argument('--obj4', help='path to obj4', required=False)
 parser.add_argument('--obj5', help='path to obj5', required=False)
 parser.add_argument('--obj6', help='path to obj6', required=False)
 
+parser.add_argument('--door', help='door exit', required=False)
+parser.add_argument('--doorkey', help='key to open door', required=False)
+parser.add_argument('--doorlocked', help='set to 1 to lock door', required=False)
+parser.add_argument('--doordest', help='door move location', required=False)
+
 args = parser.parse_args()
 
 coords = args.name.replace("x", "").replace("y", ",").replace("z", ",").split(",")
@@ -88,7 +93,12 @@ roomfile.write('  #include "area.h"\n\n')
 roomfile.write('  set_property("x", ' + x_coord + ');\n')
 roomfile.write('  set_property("y", ' + y_coord + ');\n')
 roomfile.write('  set_property("z", ' + z_coord + ');\n\n')
-
+if args.doorlocked:
+    roomfile.write('  door_closed = 1;\n  locked = 1;\n')
+if args.doorkey:
+    roomfile.write('  key = "' + args.doorkey + '";\n')
+if args.doordest:
+    roomfile.write('  set_property("door", "' + args.doordest + '");\n')
 roomfile.write('  add_area( "' + args.area + '" );\n')
 if args.scolor is None:
     roomfile.write('  set_short( "' + args.short + '" );\n')
@@ -279,6 +289,8 @@ if hexits:
     roomfile.write('  ]) );\n')
 
 # end code here
+if args.door:
+    roomfile.write('  add_exit("' + args.door + '", "#enter_door");')
 
 
 roomfile.write('}\n')
