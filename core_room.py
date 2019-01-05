@@ -262,23 +262,25 @@ if args.obj6 is not None:
 
 monsters = []
 if args.mon1 is not None:
-    objects.append([args.mon1])
+    monsters.append([args.mon1])
 if args.mon2 is not None:
-    objects.append([args.mon2])
+    monsters.append([args.mon2])
 if args.mon3 is not None:
-    objects.append([args.mon3])
+    monsters.append([args.mon3])
 if args.mon4 is not None:
-    objects.append([args.mon4])
+    monsters.append([args.mon4])
 if args.mon5 is not None:
-    objects.append([args.mon5])
+    monsters.append([args.mon5])
 if args.mon6 is not None:
-    objects.append([args.mon6])
+    monsters.append([args.mon6])
 
 if objects or monsters:
     roomfile.write('\n  set_objects( \n')
 
     objcount = len(objects) + len(monsters)
     objnum = 0
+    print objects
+    print monsters
     for roomobject in objects:
         objnum += 1
         if objcount == objnum:
