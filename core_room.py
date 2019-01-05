@@ -259,19 +259,19 @@ if args.obj5 is not None:
 if args.obj6 is not None:
     objects.append([args.obj6])
 
-monsters = []
+
 if args.mon1 is not None:
-    monsters.append([args.mon1])
+    roomfile.write('add_object(DIR+"/monsters/' + args.mon1 + '.c");\n')
 if args.mon2 is not None:
-    monsters.append([args.mon2])
+    roomfile.write('add_object(DIR+"/monsters/' + args.mon2 + '.c");\n')
 if args.mon3 is not None:
-    monsters.append([args.mon3])
+    roomfile.write('add_object(DIR+"/monsters/' + args.mon3 + '.c");\n')
 if args.mon4 is not None:
-    monsters.append([args.mon4])
+    roomfile.write('add_object(DIR+"/monsters/' + args.mon4 + '.c");\n')
 if args.mon5 is not None:
-    monsters.append([args.mon5])
+    roomfile.write('add_object(DIR+"/monsters/' + args.mon5 + '.c");\n')
 if args.mon6 is not None:
-    monsters.append([args.mon6])
+    roomfile.write('add_object(DIR+"/monsters/' + args.mon6 + '.c");\n')
 
 if objects:
     roomfile.write('\n  set_objects( \n')
@@ -284,13 +284,6 @@ if objects:
         else:
             roomfile.write(' DIR+"/objects/' + roomobject[0] + '.c", \n')
     roomfile.write(');\n')
-
-if monsters:
-    roomfile.write('\n')
-    for monster in monsters:
-        roomfile.write('add_object(DIR+"/monsters/' + monster + '.c");\n')
-    roomfile.write('\n')
-
 
 if exits:
     roomfile.write(' set_exits( ([\n')
