@@ -279,8 +279,7 @@ if objects or monsters:
 
     objcount = len(objects) + len(monsters)
     objnum = 0
-    print objects
-    print monsters
+
     for roomobject in objects:
         objnum += 1
         if objcount == objnum:
