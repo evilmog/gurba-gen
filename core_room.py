@@ -58,6 +58,13 @@ parser.add_argument('--obj4', help='path to obj4', required=False)
 parser.add_argument('--obj5', help='path to obj5', required=False)
 parser.add_argument('--obj6', help='path to obj6', required=False)
 
+parser.add_argument('--mon1', help='path to monster 1', required=False)
+parser.add_argument('--mon2', help='path to monster 2', required=False)
+parser.add_argument('--mon3', help='path to monster 3', required=False)
+parser.add_argument('--mon4', help='path to monster 4', required=False)
+parser.add_argument('--mon5', help='path to monster 5', required=False)
+parser.add_argument('--mon6', help='path to monster 6', required=False)
+
 parser.add_argument('--door', help='door exit', required=False)
 parser.add_argument('--doorkey', help='key to open door', required=False)
 parser.add_argument('--doorlocked', help='set to 1 to lock door', required=False)
@@ -252,6 +259,20 @@ if args.obj5 is not None:
 if args.obj6 is not None:
     objects.append([args.obj6])
 
+monsters = []
+if args.mon1 is not None:
+    objects.append([args.mon1])
+if args.mon2 is not None:
+    objects.append([args.mon2])
+if args.mon3 is not None:
+    objects.append([args.mon3])
+if args.mon4 is not None:
+    objects.append([args.mon4])
+if args.mon5 is not None:
+    objects.append([args.mon5])
+if args.mon6 is not None:
+    objects.append([args.mon6])
+
 if objects:
     roomfile.write('\n  set_objects( \n')
     objcount = len(objects)
@@ -259,10 +280,17 @@ if objects:
     for roomobject in objects:
         objnum += 1
         if objcount == objnum:
-            roomfile.write(' DIR+"/monsters/' + roomobject[0] + '.c"\n')
+            roomfile.write(' DIR+"/objects/' + roomobject[0] + '.c"\n')
         else:
-            roomfile.write(' DIR+"/monsters/' + roomobject[0] + '.c", \n')
+            roomfile.write(' DIR+"/objects/' + roomobject[0] + '.c", \n')
     roomfile.write(');\n')
+
+if monsters:
+    roomfile.write('\n')
+    for monster in monsters:
+        roomfile.write('add_object(DIR+"/monsters/' + monster + '.c");\n')
+    roomfile.write('\n')
+
 
 if exits:
     roomfile.write(' set_exits( ([\n')
