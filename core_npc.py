@@ -8,6 +8,13 @@ parser.add_argument('--scolor', help='short desc color', required=False)
 parser.add_argument('--long', help='long desc', required=True)
 parser.add_argument('--lcolor', help='long desc color', required=False)
 parser.add_argument('--gender', help='gender', required=True)
+parser.add_argument('--id1', help='additional id', required=False)
+parser.add_argument('--id2', help='additional id', required=False)
+parser.add_argument('--id3', help='additional id', required=False)
+parser.add_argument('--id4', help='additional id', required=False)
+parser.add_argument('--id5', help='additional id', required=False)
+parser.add_argument('--id6', help='additional id', required=False)
+
 
 syspath = "/Users/dustin.heywood1@ibm.com/git/gurba/lib/domains/core/monsters/"
 domain = "../domain.h"
@@ -28,6 +35,19 @@ npcfile.write('#include "' + domain + '"\n\n')
 npcfile.write('void setup(void) {\n')
 npcfile.write('  set_name("' + args.name + '");\n')
 npcfile.write('  add_adj("' + mob_race + '");\n')
+if args.id1:
+    npcfile.write('add_id("' + args.id1 + '");\n')
+if args.id2:
+    npcfile.write('add_id("' + args.id2 + '");\n')
+if args.id3:
+    npcfile.write('add_id("' + args.id3 + '");\n')
+if args.id4:
+    npcfile.write('add_id("' + args.id4 + '");\n')
+if args.id5:
+    npcfile.write('add_id("' + args.id5 + '");\n')
+if args.id6:
+    npcfile.write('add_id("' + args.id6 + '");\n')
+
 
 if args.scolor is None:
     npcfile.write('  set_short( "' + args.short + '" );\n')
