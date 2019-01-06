@@ -2,7 +2,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--name', help='npc name', required=True)
-parser.add_argument('--label', help='npc label', required=false)
+parser.add_argument('--label', help='npc label', required=False)
 parser.add_argument('--level', help='level', required=True)
 parser.add_argument('--short', help='short desc', required=True)
 parser.add_argument('--scolor', help='short desc color', required=False)
