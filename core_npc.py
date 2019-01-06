@@ -2,6 +2,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--name', help='npc name', required=True)
+parser.add_argument('--label', help='npc label', required=false)
 parser.add_argument('--level', help='level', required=True)
 parser.add_argument('--short', help='short desc', required=True)
 parser.add_argument('--scolor', help='short desc color', required=False)
@@ -33,7 +34,10 @@ npcfile.write('inherit "/std/monster";\n\n')
 npcfile.write('#include "' + domain + '"\n\n')
 
 npcfile.write('void setup(void) {\n')
-npcfile.write('  set_name("' + args.name + '");\n')
+if args.label is None:
+    npcfile.write('  set_name("' + args.name + '");\n')
+if args.label is not None:
+    npcfile.write('  set_name("' + args.label + '");\n')
 npcfile.write('  add_adj("' + mob_race + '");\n')
 if args.id1:
     npcfile.write('add_id("' + args.id1 + '");\n')
