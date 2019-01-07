@@ -15,12 +15,12 @@ parser.add_argument('--id3', help='additional id', required=False)
 parser.add_argument('--id4', help='additional id', required=False)
 parser.add_argument('--id5', help='additional id', required=False)
 parser.add_argument('--id6', help='additional id', required=False)
-parser.add_argument('--obj1' help='objects to hold', required=False)
-parser.add_argument('--obj2' help='objects to hold', required=False)
-parser.add_argument('--obj3' help='objects to hold', required=False)
-parser.add_argument('--obj4' help='objects to hold', required=False)
-parser.add_argument('--obj5' help='objects to hold', required=False)
-parser.add_argument('--obj6' help='objects to hold', required=False)
+parser.add_argument('--obj1', help='objects to hold', required=False)
+parser.add_argument('--obj2', help='objects to hold', required=False)
+parser.add_argument('--obj3', help='objects to hold', required=False)
+parser.add_argument('--obj4', help='objects to hold', required=False)
+parser.add_argument('--obj5', help='objects to hold', required=False)
+parser.add_argument('--obj6', help='objects to hold', required=False)
 
 
 syspath = "/Users/dustin.heywood1@ibm.com/git/gurba/lib/domains/core/monsters/"
