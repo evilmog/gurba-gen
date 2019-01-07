@@ -73,7 +73,7 @@ if args.obj6 is not None:
     objects.append([args.obj6])
 
 if objects:
-    roomfile.write('\n  set_objects( \n')
+    npcfile.write('\n  set_objects( \n')
 
     objcount = len(objects)
     objnum = 0
@@ -81,9 +81,9 @@ if objects:
     for monobject in objects:
         objnum += 1
         if objcount == objnum:
-            roomfile.write(' DIR+"/objects/' + monobject[0] + '.c"\n')
+            npcfile.write(' DIR+"/objects/' + monobject[0] + '.c"\n')
         else:
-            roomfile.write(' DIR+"/objects/' + monobject[0] + '.c", \n')
+            npcfile.write(' DIR+"/objects/' + monobject[0] + '.c", \n')
 
 
 if args.scolor is None:
