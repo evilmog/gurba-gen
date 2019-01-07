@@ -106,7 +106,7 @@ if args.doorkey:
     roomfile.write('  key = "' + args.doorkey + '";\n')
 roomfile.write('  add_area( "' + args.area + '" );\n')
 if args.door:
-    roomfile.write('  add_block("'+args.door'");')
+    roomfile.write('  add_block("'+args.door+'");')
 if args.scolor is None:
     roomfile.write('  set_short( "' + args.short + '" );\n')
 else:
