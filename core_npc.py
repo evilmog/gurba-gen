@@ -15,6 +15,12 @@ parser.add_argument('--id3', help='additional id', required=False)
 parser.add_argument('--id4', help='additional id', required=False)
 parser.add_argument('--id5', help='additional id', required=False)
 parser.add_argument('--id6', help='additional id', required=False)
+parser.add_argument('--obj1' help='objects to hold', required=False)
+parser.add_argument('--obj2' help='objects to hold', required=False)
+parser.add_argument('--obj3' help='objects to hold', required=False)
+parser.add_argument('--obj4' help='objects to hold', required=False)
+parser.add_argument('--obj5' help='objects to hold', required=False)
+parser.add_argument('--obj6' help='objects to hold', required=False)
 
 
 syspath = "/Users/dustin.heywood1@ibm.com/git/gurba/lib/domains/core/monsters/"
@@ -51,6 +57,33 @@ if args.id5:
     npcfile.write('add_id("' + args.id5 + '");\n')
 if args.id6:
     npcfile.write('add_id("' + args.id6 + '");\n')
+
+objects = []
+if args.obj1 is not None:
+    objects.append([args.obj1])
+if args.obj2 is not None:
+    objects.append([args.obj2])
+if args.obj3 is not None:
+    objects.append([args.obj3])
+if args.obj4 is not None:
+    objects.append([args.obj4])
+if args.obj5 is not None:
+    objects.append([args.obj5])
+if args.obj6 is not None:
+    objects.append([args.obj6])
+
+if objects:
+    roomfile.write('\n  set_objects( \n')
+
+    objcount = len(objects)
+    objnum = 0
+
+    for monobject in objects:
+        objnum += 1
+        if objcount == objnum:
+            roomfile.write(' DIR+"/objects/' + monobject[0] + '.c"\n')
+        else:
+            roomfile.write(' DIR+"/objects/' + monobject[0] + '.c", \n')
 
 
 if args.scolor is None:
