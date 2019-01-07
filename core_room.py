@@ -134,6 +134,7 @@ if args.item4 is not None:
 exits = []
 hexits = []
 
+
 if args.north is not None:
     new_yint = y_int + int(int(args.north) * 10)
     if args.anorth is not None:
@@ -319,8 +320,6 @@ if hexits:
     roomfile.write('  ]) );\n')
 
 # end code here
-if args.door:
-    roomfile.write('  add_exit("' + args.door + '", "#enter_door");')
 
 
 roomfile.write('}\n')
