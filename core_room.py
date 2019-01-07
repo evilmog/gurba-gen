@@ -68,7 +68,7 @@ parser.add_argument('--mon6', help='path to monster 6', required=False)
 parser.add_argument('--door', help='door exit', required=False)
 parser.add_argument('--doorkey', help='key to open door', required=False)
 parser.add_argument('--doorlocked', help='set to 1 to lock door', required=False)
-parser.add_argument('--doordest', help='door move location', required=False)
+
 
 args = parser.parse_args()
 
@@ -104,9 +104,9 @@ if args.doorlocked:
     roomfile.write('  door_closed = 1;\n  locked = 1;\n')
 if args.doorkey:
     roomfile.write('  key = "' + args.doorkey + '";\n')
-if args.doordest:
-    roomfile.write('  set_property("door", "' + args.doordest + '");\n')
 roomfile.write('  add_area( "' + args.area + '" );\n')
+if args.door:
+    roomfile.write('  add_block("'+args.door'");')
 if args.scolor is None:
     roomfile.write('  set_short( "' + args.short + '" );\n')
 else:
