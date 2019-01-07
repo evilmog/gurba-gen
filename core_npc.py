@@ -84,6 +84,7 @@ if objects:
             npcfile.write(' DIR+"/objects/' + monobject[0] + '.c"\n')
         else:
             npcfile.write(' DIR+"/objects/' + monobject[0] + '.c", \n')
+    npcfile.write(');\n')
 
 
 if args.scolor is None:
