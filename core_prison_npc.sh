@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+python core_npc.py --name "prisonguard" --label "Detention Center Guard" --id1 detention --id2 center --id3 guard --short "Detention Center Guards" --long "These are massively huge vaurgch, larger than any seen working the mines in the CITY.  Carrying standard tranq pistols, they stand almost like statues, starting straight ahead and watching for trouble. Detention Center Guard has no missing limbs. " --level 20 --gender male
