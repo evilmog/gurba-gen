@@ -64,6 +64,12 @@ parser.add_argument('--mon3', help='path to monster 3', required=False)
 parser.add_argument('--mon4', help='path to monster 4', required=False)
 parser.add_argument('--mon5', help='path to monster 5', required=False)
 parser.add_argument('--mon6', help='path to monster 6', required=False)
+parser.add_argument('--mon7', help='path to monster 7', required=False)
+parser.add_argument('--mon8', help='path to monster 8', required=False)
+parser.add_argument('--mon9', help='path to monster 9', required=False)
+parser.add_argument('--mon10', help='path to monster 10', required=False)
+parser.add_argument('--mon11', help='path to monster 11', required=False)
+parser.add_argument('--mon12', help='path to monster 12', required=False)
 
 parser.add_argument('--door', help='door exit', required=False)
 parser.add_argument('--doorkey', help='key to open door', required=False)
@@ -274,6 +280,18 @@ if args.mon5 is not None:
     monsters.append([args.mon5])
 if args.mon6 is not None:
     monsters.append([args.mon6])
+if args.mon7 is not None:
+    monsters.append([args.mon7])
+if args.mon8 is not None:
+    monsters.append([args.mon8])
+if args.mon9 is not None:
+    monsters.append([args.mon9])
+if args.mon10 is not None:
+    monsters.append([args.mon10])
+if args.mon11 is not None:
+    monsters.append([args.mon11])
+if args.mon12 is not None:
+    monsters.append([args.mon12])
 
 if objects or monsters:
     roomfile.write('\n  set_objects( \n')
