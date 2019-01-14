@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c0ae5d8-19c9-4730-8a87-18a4a6830bc4" name="Default Changelist" comment="updates">
-      <change afterPath="$PROJECT_DIR$/core_pbasement_gen.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_pbasement_npc.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core_kore_gen.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core_kore_npc.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_east_housing_gen.sh" beforeDir="false" afterPath="$PROJECT_DIR$/core_east_housing_gen.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_prison_gen.sh" beforeDir="false" afterPath="$PROJECT_DIR$/core_prison_gen.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_prison_npc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/core_prison_npc.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_room.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_room.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,35 +17,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core_east_housing_gen.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="88" selection-start-line="88" selection-end-line="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core_prison_gen.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="22" column="55" selection-start-line="22" selection-end-line="22" selection-end-column="55" />
+            <state relative-caret-position="115">
+              <caret line="87" column="51" selection-start-line="87" selection-end-line="87" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core_pbasement_gen.sh">
+        <entry file="file://$PROJECT_DIR$/core_kore_gen.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="26" column="101" selection-start-line="26" selection-start-column="101" selection-end-line="26" selection-end-column="101" />
+            <state relative-caret-position="85">
+              <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core_pbasement_npc.sh">
+        <entry file="file://$PROJECT_DIR$/core_kore_npc.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="15" column="589" selection-start-line="15" selection-start-column="589" selection-end-line="15" selection-end-column="589" />
+            <state relative-caret-position="55">
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -126,6 +113,8 @@
         <option value="$PROJECT_DIR$/core_room.py" />
         <option value="$PROJECT_DIR$/core_pbasement_npc.sh" />
         <option value="$PROJECT_DIR$/core_pbasement_gen.sh" />
+        <option value="$PROJECT_DIR$/core_kore_npc.sh" />
+        <option value="$PROJECT_DIR$/core_kore_gen.sh" />
       </list>
     </option>
   </component>
@@ -199,7 +188,8 @@
       <workItem from="1547099609344" duration="201000" />
       <workItem from="1547351539584" duration="16000" />
       <workItem from="1547351597627" duration="5054000" />
-      <workItem from="1547401593350" duration="5799000" />
+      <workItem from="1547401593350" duration="6038000" />
+      <workItem from="1547417333768" duration="3093000" />
     </task>
     <task id="LOCAL-00058" summary="updates">
       <created>1546210001607</created>
@@ -548,13 +538,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55503000" />
+    <option name="totallyTimeSpent" value="58835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="477" width="1260" height="277" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32101807" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3259442" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -720,24 +710,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core_east_housing_gen.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core_east_npc.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
           <caret line="25" column="18" selection-start-line="25" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core_prison_gen.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="22" column="55" selection-start-line="22" selection-end-line="22" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -755,6 +731,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core_pbasement_gen.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="25" column="655" selection-start-line="25" selection-start-column="655" selection-end-line="25" selection-end-column="655" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core_pbasement_npc.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -762,10 +745,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core_pbasement_gen.sh">
+    <entry file="file://$PROJECT_DIR$/core_prison_gen.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="26" column="101" selection-start-line="26" selection-start-column="101" selection-end-line="26" selection-end-column="101" />
+        <state relative-caret-position="72">
+          <caret line="22" column="55" selection-start-line="22" selection-end-line="22" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core_east_housing_gen.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="87" column="51" selection-start-line="87" selection-end-line="87" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core_kore_npc.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core_kore_gen.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
         </state>
       </provider>
     </entry>
