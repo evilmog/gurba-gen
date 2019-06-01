@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c0ae5d8-19c9-4730-8a87-18a4a6830bc4" name="Default Changelist" comment="updates">
-      <change afterPath="$PROJECT_DIR$/core_kore_gen.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core_kore_npc.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +15,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core_east_housing_gen.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
+            <state relative-caret-position="1305">
               <caret line="87" column="51" selection-start-line="87" selection-end-line="87" selection-end-column="51" />
             </state>
           </provider>
@@ -26,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core_kore_gen.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
+            <state relative-caret-position="285">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -35,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core_kore_npc.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -120,27 +118,17 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="7" />
-    <option name="y" value="477" />
+    <option name="y" value="23" />
     <option name="width" value="1260" />
-    <option name="height" value="277" />
+    <option name="height" value="731" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="gurba-gen" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gurba-gen" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,7 +177,8 @@
       <workItem from="1547351539584" duration="16000" />
       <workItem from="1547351597627" duration="5054000" />
       <workItem from="1547401593350" duration="6038000" />
-      <workItem from="1547417333768" duration="3093000" />
+      <workItem from="1547417333768" duration="3299000" />
+      <workItem from="1555050332590" duration="19000" />
     </task>
     <task id="LOCAL-00058" summary="updates">
       <created>1546210001607</created>
@@ -538,13 +527,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58835000" />
+    <option name="totallyTimeSpent" value="59060000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="477" width="1260" height="277" extended-state="0" />
-    <editor active="true" />
+    <frame x="7" y="23" width="1260" height="731" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3259442" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33087027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -754,22 +742,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core_east_housing_gen.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
+        <state relative-caret-position="1305">
           <caret line="87" column="51" selection-start-line="87" selection-end-line="87" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core_kore_npc.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core_kore_gen.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
