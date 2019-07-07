@@ -91,7 +91,7 @@ print args.name
 if args.area is None:
     args.area = "core"
 
-syspath = "/Users/dustin.heywood1@ibm.com/git/gurba/lib/domains/core/rooms/"
+syspath = "../gurba/lib/domains/core/rooms/"
 roomfile = open(syspath + args.area + "/" + args.name + ".c", "w")
 # print args.syspath + args.name + ".c"
 

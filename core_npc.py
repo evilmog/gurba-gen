@@ -23,7 +23,7 @@ parser.add_argument('--obj5', help='objects to hold', required=False)
 parser.add_argument('--obj6', help='objects to hold', required=False)
 
 
-syspath = "/Users/dustin.heywood1@ibm.com/git/gurba/lib/domains/core/monsters/"
+syspath = "../gurba/lib/domains/core/monsters/"
 domain = "../domain.h"
 
 args = parser.parse_args()
