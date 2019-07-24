@@ -1,0 +1,18 @@
+git@derbymud:~/hashes$ xxd integgroll.o
+00000000: 6e61 6d65 2022 696e 7465 6767 726f 6c6c  name "integgroll
+00000010: 220a 7061 7373 776f 7264 2022 ded5 1449  ".password "...I
+00000020: 385c 22cd dc3d c0c7 335c 61b3 d655 b166  8\"..=..3\a..U.f
+00000030: c42e 220a
+
+1) this users password is password
+2) this game takes the users password and adds on their username to
+   the end so if the password is password and the username is integgroll
+   then the hash is SHA1("passwordinteggroll")
+3) the file format is name "integgroll" + newline then password "
+   hash" only instead of it being in ascii, its straight up raw
+   so you need to hexdump
+
+What I need is username:hash so in this case the expected output is
+integgroll:ded514493822cddc3dc0c73307b3d655b166c42e
+
+parse.py is my current attempt
