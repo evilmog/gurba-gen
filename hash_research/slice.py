@@ -4,7 +4,7 @@ from os.path import isfile, join
 from os import walk
 
 fl = []
-for (dirpath, dirnames, filenames) in walk("."):
+for (dirpath, dirnames, filenames) in walk("hashes"):
     fl.extend(filenames)
     break
 
@@ -20,11 +20,12 @@ def toHex(s):
 
 
 for line in fl:
-  f = open(line, "r")
+  fn = "hashes/" + line
+  f = open(fn, "r")
   lines = f.readlines()
   f.close
   f.close()
-  hash = toHex(lines[1].split(' ')[1].rstrip())[2:-2]
-  username = lines[0].split('"')[1]
+  hash = toHex(lines[1]).rstrip()[:-2][20:]
+  username = lines[0].rstrip().split('"')[1]
   print username+":"+hash
 
