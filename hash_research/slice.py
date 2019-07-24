@@ -23,7 +23,6 @@ for line in fl:
   fn = "hashes/" + line
   f = open(fn, "r")
   lines = f.readlines()
-  f.close
   f.close()
   hash = toHex(lines[1]).rstrip()[:-2][20:]
   username = lines[0].rstrip().split('"')[1]
