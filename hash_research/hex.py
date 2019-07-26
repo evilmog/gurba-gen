@@ -21,11 +21,18 @@ def toHex(s):
 
 for line in fl:
   fn = "hashes/" + line
-  f = open(fn, "r")
-  lines = f.readlines()
-  f.close()
-  raw = toHex(lines[1]).rstrip()
-  username = lines[0].rstrip().split('"')[1]
-  print lines[1]
-  print raw+":"+username
-
+  print "-----"
+  print fn
+  with open(fn, 'rb') as f:
+    buffer = ""
+    plaintext = ""
+    for chunk in iter(lambda: f.read(32), b''):
+      buffer += chunk.encode('hex')
+      sbuffer = buffer.split('220a70617373776f72642022')
+#      xbuffer = sbuffer.split ('2022')
+      plaintext += chunk
+  print ">"
+  print plaintext
+  print buffer
+#  print xbuffer
+  print "-----"

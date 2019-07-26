@@ -9,6 +9,7 @@ parser.add_argument('--scolor', help='short desc color', required=False)
 parser.add_argument('--long', help='long desc', required=True)
 parser.add_argument('--lcolor', help='long desc color', required=False)
 parser.add_argument('--gender', help='gender', required=True)
+parser.add_argument('--aggro', help='sets aggressive', required=False)
 parser.add_argument('--id1', help='additional id', required=False)
 parser.add_argument('--id2', help='additional id', required=False)
 parser.add_argument('--id3', help='additional id', required=False)
@@ -103,6 +104,8 @@ npcfile.write('  set_level(' + str(args.level) + ');\n\n')
 npcfile.write('  set_hit_skill("' + "combat/unarmed" + '");\n')
 npcfile.write('  set_skill("' + "combat/unarmed" + '", ' + mob_skill + ');\n')
 npcfile.write('  set_skill("' + "combat/defense" + '", ' + mob_skill + ');\n')
+if args.aggro is not None:
+    npcfile.write('set_aggressive 1;\n')
 
 # end code here
 npcfile.write('}\n')
