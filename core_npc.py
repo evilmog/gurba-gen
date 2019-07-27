@@ -45,7 +45,7 @@ if args.label is None:
     npcfile.write('  set_name("' + args.name + '");\n')
 if args.label is not None:
     npcfile.write('  set_name("' + args.label + '");\n')
-npcfile.write('  add_adj("' + mob_race + '");\n')
+# npcfile.write('  add_adj("' + mob_race + '");\n')
 if args.id1:
     npcfile.write('add_id("' + args.id1 + '");\n')
 if args.id2:
@@ -105,7 +105,7 @@ npcfile.write('  set_hit_skill("' + "combat/unarmed" + '");\n')
 npcfile.write('  set_skill("' + "combat/unarmed" + '", ' + mob_skill + ');\n')
 npcfile.write('  set_skill("' + "combat/defense" + '", ' + mob_skill + ');\n')
 if args.aggro is not None:
-    npcfile.write('set_aggressive 1;\n')
+    npcfile.write('set_aggressive (1);\n')
 
 # end code here
 npcfile.write('}\n')
