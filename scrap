@@ -1,0 +1,21 @@
+   add_action("do_push", "push");
+   add_action("do_push", "press");
+
+int do_push(string arg) {
+   if (arg == "button") {
+      object obj;
+
+      write("You push the button and out of nowhere a new wiz potion appears.\n");
+
+      obj = clone_object(DIR+"/objects/wiz_potion.c");
+      obj->setup();
+      obj->move(this_player()->query_environment());
+      return 1;
+   } else {
+      return 0;
+   }
+}
+
+int do_push(string arg) {
+  return 0;
+}
