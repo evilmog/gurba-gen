@@ -1,7 +1,7 @@
 import argparse
 import random
 
-syspath = "/Users/dustin.heywood1@ibm.com/git/gurba/lib/domains/sewer/rooms/"
+syspath = "/Users/evilmog/git/gurba/lib/domains/sewer/rooms/"
 domain = "../domain.h"
 
 floors = ['stone', 'jade', 'marble', 'obsidian', 'limestone', 'quartz', 'basalt']

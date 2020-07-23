@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c0ae5d8-19c9-4730-8a87-18a4a6830bc4" name="Default Changelist" comment="updates">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_armour.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_armour.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_city_gen.sh" beforeDir="false" afterPath="$PROJECT_DIR$/core_city_gen.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raptorius_npc.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raptorius_room.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrap" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,35 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core_east_housing_gen.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1305">
-              <caret line="87" column="51" selection-start-line="87" selection-end-line="87" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core_kore_gen.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core_kore_npc.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -120,7 +97,7 @@
     <option name="x" value="7" />
     <option name="y" value="23" />
     <option name="width" value="1260" />
-    <option name="height" value="731" />
+    <option name="height" value="724" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -128,10 +105,21 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="gurba-gen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gurba-gen" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -179,6 +167,7 @@
       <workItem from="1547401593350" duration="6038000" />
       <workItem from="1547417333768" duration="3299000" />
       <workItem from="1555050332590" duration="19000" />
+      <workItem from="1581815675725" duration="31000" />
     </task>
     <task id="LOCAL-00058" summary="updates">
       <created>1546210001607</created>
@@ -527,12 +516,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59060000" />
+    <option name="totallyTimeSpent" value="59091000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="23" width="1260" height="731" extended-state="0" />
+    <frame x="7" y="23" width="1260" height="724" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33087027" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3357964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -740,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core_east_housing_gen.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="87" column="51" selection-start-line="87" selection-end-line="87" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core_kore_npc.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -758,6 +740,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core_east_housing_gen.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="87" column="51" selection-start-line="87" selection-end-line="87" selection-end-column="51" />
         </state>
       </provider>
     </entry>

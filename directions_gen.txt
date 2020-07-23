@@ -70,7 +70,7 @@
 5-q:n,s
 5-r:n,s
 6-a:s
-6-b:n,sw
+6-b:n,sw,e
 6-c:w,e
 6-d:w,n,e
 6-e:w,e,s
@@ -108,7 +108,7 @@
 7-r:e
 7-s:n,w,nw,s
 8-a:s
-8-b:sw,se
+8-b:sw,se,nw
 8-c:nw,s
 8-d:sw,s
 8-e:s,e
@@ -196,8 +196,8 @@
 12-s:n,s
 13-a:n,s
 13-b:n,s,e
-13-c:w,e
-13-d:s
+13-c:w,e,se
+13-d:s,w
 13-e:s,e
 13-f:n,w,s
 13-g:n,s

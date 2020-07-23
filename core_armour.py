@@ -36,45 +36,45 @@ if args.type == "waist":
 
 # Begin Level Block
 if args.level == "1":
-  material = "Bronze"
+  material = "bronze"
 if args.level == "2":
-  material = "Iron"
+  material = "iron"
 if args.level == "3":
-  material = "Gold"
+  material = "gold"
 if args.level == "4":
-  material = "Lead"
+  material = "lead"
 if args.level == "5":
-  material = "Aluminum"
+  material = "aluminum"
 if args.level == "6":
-  material = "Tungsten"
+  material = "tungsten"
 if args.level == "7":
-  material = "Iron-Carbide"
+  material = "iron-Carbide"
 if args.level == "8":
-  material = "Mithril"
+  material = "mithril"
 if args.level == "9":
-  material = "Tungsten-Carbide"
+  material = "tungsten-carbide"
 if args.level == "10":
-  material = "Mithril-Titanium"
+  material = "mithril-titanium"
 if args.level == "11":
-  material = "Aluminum-Titanium"
+  material = "aluminum-titanium"
 if args.level == "12":
-  material = "Titanium-Carbide"
+  material = "titanium-carbide"
 if args.level == "13":
-  material = "Ubobtanium"
+  material = "ubobtanium"
 if args.level == "14":
-  material = "Aluminum-Unobtainium"
+  material = "aluminum-unobtainium"
 if args.level == "15":
-  material = "Tungsten-Unobtanium"
+  material = "tungsten-unobtanium"
 if args.level == "16":
-  material = "Titanium-Unobtanium"
+  material = "titanium-unobtanium"
 if args.level == "17":
-  material = "Mogium"
+  material = "mogium"
 if args.level == "18":
-  material = "Mogium-Titanium"
+  material = "mogium-titanium"
 if args.level == "19":
-  material = "Tungsten-Mogium"
+  material = "tungsten-mogium"
 if args.level == "20":
-  material = "Mogium-Unobtanium"
+  material = "mogium-unobtanium"
 
 
 
@@ -86,10 +86,9 @@ armorfile.write('inherit "/std/armor";\n\n')
 armorfile.write('#include "' + domain + '"\n\n')
 
 armorfile.write('void setup(void) {\n')
-armorfile.write('  set_id("' + armortype + '");\n')
-armorfile.write('  set_adj("' + material + '");\n')
-armorfile.write('  add_id("armour");\n')
+armorfile.write('  set_id("' + material + ' ' + armortype + '");\n')
 armorfile.write('  add_id("' + material + '");\n')
+armorfile.write('  add_id("armour");')
 armorfile.write('  add_id("' + material + ' ' + armortype +'");\n')
 
 if args.level:
