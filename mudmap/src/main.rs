@@ -4,13 +4,16 @@ const LEVELS_CHAR_WALL: char = '#';
 const OUTPUT_CELL_DELIMITER: &str = "\n";
 const OUTPUT_SECTION_DELIMITER: &str = ":";
 
+use color_eyre::eyre::Result;
 use std::env;
 use std::fs;
-use std::io::{self, BufRead, Result};
+use std::io::{self, BufRead};
 use std::path::Path;
 use std::process;
 
 fn main() -> Result<()> {
+    color_eyre::install()?;
+
     let args: Vec<String> = env::args().collect();
     let path = args.get(1);
     if let None = path {
