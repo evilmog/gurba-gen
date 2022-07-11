@@ -1,4 +1,4 @@
-# Mudmap
+# The CLI
 
 This is a Rust program that will convert .level files into a long list of mud coordinates in the form `x,y,z:[n,w,s,e]`.
 
