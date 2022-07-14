@@ -1,6 +1,10 @@
 use color_eyre::eyre::Result;
+use glob::glob;
 use image;
-use std::collections;
+use std::{
+    collections, fs,
+    path::{Path, PathBuf},
+};
 
 const MAP_WIDTH: u32 = 100;
 
@@ -54,24 +58,64 @@ pub fn palette() -> collections::HashMap<char, image::Rgb<u8>> {
     colors
 }
 
-pub fn generate() -> Result<()> {
+pub fn generate(input_path: &str, output_path: &str) -> Result<()> {
+    println!("Running grid-image...");
+    let input_path = Path::new(input_path);
+    let output_path = Path::new(output_path);
+
     let colors = palette();
 
-    let lines = super::read_lines("./data/maps/a8/map.txt")?;
-    let lines: Vec<String> = lines.map(|l| l.unwrap()).collect();
-    let mut img: image::RgbImage = image::ImageBuffer::new(MAP_WIDTH, lines.len() as u32);
+    let maps =
+        glob(input_path.join("**/*/map.txt").to_str().unwrap()).expect("Failed to read input path");
 
-    for (y, line) in lines.iter().enumerate() {
-        let l = line;
-        let chars = l.chars();
+    let dir = fs::read_dir(output_path);
+    if dir.is_err() {
+        // it could be a different kind of error, so check existence better
+        fs::create_dir(output_path)?;
+    }
 
-        for (x, char) in chars.enumerate() {
-            let color = colors.get(&char);
-            img.put_pixel(x as u32, y as u32, color.unwrap().to_owned());
+    for map in maps {
+        match map {
+            Ok(path) => {
+                let output_path = output_filename(path.to_owned(), output_path.to_owned());
+
+                println!("Generating map: {:?} -> {:?}", path.display(), &output_path,);
+
+                let lines = super::read_lines(path)?;
+                let lines: Vec<String> = lines.map(|l| l.unwrap()).collect();
+                let mut img: image::RgbImage =
+                    image::ImageBuffer::new(MAP_WIDTH, lines.len() as u32);
+
+                for (y, line) in lines.iter().enumerate() {
+                    let l = line;
+                    let chars = l.chars();
+
+                    for (x, char) in chars.enumerate() {
+                        let color = colors.get(&char);
+                        img.put_pixel(x as u32, y as u32, color.unwrap().to_owned());
+                    }
+                }
+
+                img.save(&output_path).unwrap();
+            }
+            Err(e) => println!("Error finding map: {:?}", e),
         }
     }
 
-    img.save("test.png").unwrap();
-
     Ok(())
+}
+
+fn output_filename(map_path: PathBuf, output_path: PathBuf) -> String {
+    format!(
+        "{}/{}.png",
+        output_path.to_str().unwrap(),
+        map_path
+            .parent()
+            .unwrap()
+            .iter()
+            .last()
+            .unwrap()
+            .to_str()
+            .unwrap()
+    )
 }

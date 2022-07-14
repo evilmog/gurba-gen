@@ -24,9 +24,13 @@ fn cli() -> Command<'static> {
                 .arg_required_else_help(true),
         )
         .subcommand(
-            Command::new("grid-image").about(
-                "Generates an image file for a given set of text files and character mappings",
-            ),
+            Command::new("grid-image")
+                .about(
+                    "Generates an image file for a given set of text files and character mappings",
+                )
+                .arg(arg!(<INPUT_PATH> "The directory to recursively read map.txt files from"))
+                .arg(arg!(<OUTPUT_PATH> "The directory to output images to"))
+                .arg_required_else_help(true),
         )
 }
 fn main() -> Result<()> {
@@ -42,8 +46,16 @@ fn main() -> Result<()> {
 
             levels::parse(&path).unwrap();
         }
-        Some(("grid-image", _sub_matches)) => {
-            grid_image::generate().unwrap();
+        Some(("grid-image", sub_matches)) => {
+            let input_path = sub_matches
+                .get_one::<String>("INPUT_PATH")
+                .expect("required");
+
+            let output_path = sub_matches
+                .get_one::<String>("OUTPUT_PATH")
+                .expect("required");
+
+            grid_image::generate(&input_path, &output_path).unwrap();
         }
         _ => unreachable!(), // If all subcommands are defined above, anything else is unreachabe!()
     }
