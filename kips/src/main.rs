@@ -7,8 +7,8 @@ use std::{
 use clap::{arg, Command};
 use color_eyre::eyre::Result;
 
-mod grid_image;
-mod levels;
+mod levelparse;
+mod mapgen;
 
 fn cli() -> Command<'static> {
     Command::new("kips")
@@ -44,7 +44,7 @@ fn main() -> Result<()> {
                 .get_one::<String>("LEVELS_PATH")
                 .expect("required");
 
-            levels::parse(&path).unwrap();
+            levelparse::parse(&path).unwrap();
         }
         Some(("mapgen", sub_matches)) => {
             let input_path = sub_matches
@@ -55,7 +55,7 @@ fn main() -> Result<()> {
                 .get_one::<String>("OUTPUT_PATH")
                 .expect("required");
 
-            grid_image::gen(&input_path, &output_path).unwrap();
+            mapgen::gen(&input_path, &output_path).unwrap();
         }
         _ => unreachable!(), // If all subcommands are defined above, anything else is unreachabe!()
     }
