@@ -1,6 +1,7 @@
 const LEVELS_EXTENSION: &str = "level";
 const LEVELS_CHAR_ROOM: char = ' ';
-const LEVELS_CHAR_WALL: char = '#';
+const LEVELS_CHAR_DOWN: char = 'D';
+const LEVELS_CHAR_UP: char = 'U';
 const OUTPUT_CELL_DELIMITER: &str = "\n";
 const OUTPUT_SECTION_DELIMITER: &str = ":";
 
@@ -64,40 +65,44 @@ pub fn parse(path: &str) -> Result<()> {
 
             for char in chars {
                 let mut cell = Cell {
-                    char: match char {
-                        LEVELS_CHAR_ROOM => LEVELS_CHAR_ROOM,
-                        _ => LEVELS_CHAR_WALL,
-                    },
+                    char,
                     x,
                     y,
                     z,
                     exits: Vec::new(),
                 };
 
-                // Consider that each exit is a corridor to an exit in another room, so it only makes sense to create them together.
-                // Iterators don't let us look into the future, so we are looking for corridors behind the cursor.
-                if LEVELS_CHAR_ROOM == cell.char {
-                    // East-West is based on the last cell
-                    let last_cell = cells.last_mut();
-                    if let Some(l) = last_cell {
-                        if LEVELS_CHAR_ROOM == l.char {
-                            l.exits.push("e".to_string());
-                            cell.exits.push("w".to_string());
-                        }
-                    }
-
-                    // We can't look behind the first row.
-                    if y > 1 {
-                        // North-South is based on the cell in the same position on the last row
-                        let cells_len = cells.len();
-                        let cell_in_last_row = cells.get_mut(cells_len - rowlen);
-                        if let Some(l) = cell_in_last_row {
+                match cell.char {
+                    // Consider that each exit is a corridor to an exit in another room, so it only makes sense to create them together.
+                    // Iterators don't let us look into the future, so we are looking for corridors behind the cursor.
+                    LEVELS_CHAR_ROOM => {
+                        // East-West is based on the last cell
+                        let last_cell = cells.last_mut();
+                        if let Some(l) = last_cell {
                             if LEVELS_CHAR_ROOM == l.char {
-                                l.exits.push("n".to_string());
-                                cell.exits.push("s".to_string());
+                                l.exits.push("e".to_string());
+                                cell.exits.push("w".to_string());
+                            }
+                        }
+
+                        // We can't look behind the first row.
+                        if y > 1 {
+                            // North-South is based on the cell in the same position on the last row
+                            let cells_len = cells.len();
+                            let cell_in_last_row = cells.get_mut(cells_len - rowlen);
+                            if let Some(l) = cell_in_last_row {
+                                if LEVELS_CHAR_ROOM == l.char {
+                                    l.exits.push("n".to_string());
+                                    cell.exits.push("s".to_string());
+                                }
                             }
                         }
                     }
+                    LEVELS_CHAR_DOWN => {
+                        cell.exits.push("d".to_string());
+                    }
+                    LEVELS_CHAR_UP => cell.exits.push("u".to_string()),
+                    _ => (),
                 }
 
                 cells.push(cell);
@@ -110,7 +115,7 @@ pub fn parse(path: &str) -> Result<()> {
 
     let coords: Vec<String> = cells
         .iter()
-        .filter(|cell| cell.char == LEVELS_CHAR_ROOM)
+        .filter(|cell| [LEVELS_CHAR_ROOM, LEVELS_CHAR_DOWN, LEVELS_CHAR_UP].contains(&cell.char))
         .map(|cell| cell.to_string())
         .collect();
     println!("{}", coords.join(OUTPUT_CELL_DELIMITER));
