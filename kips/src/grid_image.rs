@@ -58,7 +58,7 @@ pub fn palette() -> collections::HashMap<char, image::Rgb<u8>> {
     colors
 }
 
-pub fn generate(input_path: &str, output_path: &str) -> Result<()> {
+pub fn gen(input_path: &str, output_path: &str) -> Result<()> {
     println!("Running grid-image...");
     let input_path = Path::new(input_path);
     let output_path = Path::new(output_path);
