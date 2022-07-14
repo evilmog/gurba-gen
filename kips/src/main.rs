@@ -1,5 +1,13 @@
-use clap::{arg, Command};
+use std::{
+    fs,
+    io::{self, BufRead},
+    path::Path,
+};
 
+use clap::{arg, Command};
+use color_eyre::eyre::Result;
+
+mod grid_image;
 mod levels;
 
 fn cli() -> Command<'static> {
@@ -15,8 +23,15 @@ fn cli() -> Command<'static> {
                 .arg(arg!(<LEVELS_PATH> "The directory containing level files"))
                 .arg_required_else_help(true),
         )
+        .subcommand(
+            Command::new("grid-image").about(
+                "Generates an image file for a given set of text files and character mappings",
+            ),
+        )
 }
-fn main() {
+fn main() -> Result<()> {
+    color_eyre::install()?;
+
     let matches = cli().get_matches();
 
     match matches.subcommand() {
@@ -24,8 +39,22 @@ fn main() {
             let path = sub_matches
                 .get_one::<String>("LEVELS_PATH")
                 .expect("required");
-            levels::parse_levels(&path).unwrap();
+
+            levels::parse(&path).unwrap();
+        }
+        Some(("grid-image", _sub_matches)) => {
+            grid_image::generate().unwrap();
         }
         _ => unreachable!(), // If all subcommands are defined above, anything else is unreachabe!()
     }
+
+    Ok(())
+}
+
+fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<fs::File>>>
+where
+    P: AsRef<Path>,
+{
+    let file = fs::File::open(filename)?;
+    Ok(io::BufReader::new(file).lines())
 }

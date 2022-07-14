@@ -6,12 +6,9 @@ const OUTPUT_SECTION_DELIMITER: &str = ":";
 
 use color_eyre::eyre::Result;
 use std::fs;
-use std::io::{self, BufRead};
 use std::path::Path;
 
-pub fn parse_levels(path: &str) -> Result<()> {
-    color_eyre::install()?;
-
+pub fn parse(path: &str) -> Result<()> {
     let levels_path = Path::new(path);
 
     println!(
@@ -55,7 +52,7 @@ pub fn parse_levels(path: &str) -> Result<()> {
 
         println!("Parsing {:?}...", Path::canonicalize(&path)?);
 
-        let lines = read_lines(path)?;
+        let lines = super::read_lines(path)?;
         let mut y = 0;
         let mut rowlen: usize;
 
@@ -140,12 +137,4 @@ impl Cell {
             self.exits.join(",")
         )
     }
-}
-
-fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<fs::File>>>
-where
-    P: AsRef<Path>,
-{
-    let file = fs::File::open(filename)?;
-    Ok(io::BufReader::new(file).lines())
 }
