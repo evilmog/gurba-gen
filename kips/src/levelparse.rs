@@ -6,11 +6,12 @@ const OUTPUT_CELL_DELIMITER: &str = "\n";
 const OUTPUT_SECTION_DELIMITER: &str = ":";
 
 use color_eyre::eyre::Result;
-use std::fs;
+use std::fs::{self, write};
 use std::path::Path;
 
-pub fn parse(path: &str) -> Result<()> {
+pub fn parse(path: &str, output_path: &str) -> Result<()> {
     let levels_path = Path::new(path);
+    let output_path = Path::new(output_path);
 
     println!(
         "Scanning for levels in {:?}.",
@@ -120,7 +121,9 @@ pub fn parse(path: &str) -> Result<()> {
         .filter(|cell| [LEVELS_CHAR_ROOM, LEVELS_CHAR_DOWN, LEVELS_CHAR_UP].contains(&cell.char))
         .map(|cell| cell.to_string())
         .collect();
-    println!("{}", coords.join(OUTPUT_CELL_DELIMITER));
+
+    println!("Writing results to {}", output_path.to_string_lossy());
+    write(output_path, coords.join(OUTPUT_CELL_DELIMITER)).unwrap();
 
     Ok(())
 }

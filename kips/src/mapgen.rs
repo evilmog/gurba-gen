@@ -1,6 +1,9 @@
 use color_eyre::eyre::Result;
 use glob::glob;
-use image;
+use image::{
+    self,
+    imageops::{resize, FilterType},
+};
 use std::{
     collections, fs,
     path::{Path, PathBuf},
@@ -58,7 +61,7 @@ pub fn palette() -> collections::HashMap<char, image::Rgb<u8>> {
     colors
 }
 
-pub fn gen(input_path: &str, output_path: &str) -> Result<()> {
+pub fn gen(input_path: &str, output_path: &str, scale: u32) -> Result<()> {
     println!("Running grid-image...");
     let input_path = Path::new(input_path);
     let output_path = Path::new(output_path);
@@ -95,6 +98,13 @@ pub fn gen(input_path: &str, output_path: &str) -> Result<()> {
                         img.put_pixel(x as u32, y as u32, color.unwrap().to_owned());
                     }
                 }
+
+                let img = resize(
+                    &img,
+                    img.width() * scale,
+                    img.height() * scale,
+                    FilterType::Nearest,
+                );
 
                 img.save(&output_path).unwrap();
             }

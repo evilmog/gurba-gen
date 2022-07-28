@@ -1,11 +1,10 @@
+use clap::{arg, value_parser, Command};
+use color_eyre::eyre::Result;
 use std::{
     fs,
     io::{self, BufRead},
     path::Path,
 };
-
-use clap::{arg, Command};
-use color_eyre::eyre::Result;
 
 mod levelparse;
 mod mapgen;
@@ -20,7 +19,8 @@ fn cli() -> Command<'static> {
         .subcommand(
             Command::new("levelparse")
                 .about("Parses .level files into a list of mud room coordinates and exits")
-                .arg(arg!(<LEVELS_PATH> "The directory containing level files"))
+                .arg(arg!(<LEVELS_PATH> "The directory containing level files").required(true))
+                .arg(arg!(<OUTPUT_PATH> "The path of the file to output to").required(true))
                 .arg_required_else_help(true),
         )
         .subcommand(
@@ -30,6 +30,12 @@ fn cli() -> Command<'static> {
                 )
                 .arg(arg!(<INPUT_PATH> "The directory to recursively read map.txt files from"))
                 .arg(arg!(<OUTPUT_PATH> "The directory to output images to"))
+                .arg(
+                    arg!(-s --scale <SCALE> "Increase pixel scale by an integer factor")
+                        .value_parser(value_parser!(u32))
+                        .name("SCALE")
+                        .required(false),
+                )
                 .arg_required_else_help(true),
         )
 }
@@ -44,7 +50,11 @@ fn main() -> Result<()> {
                 .get_one::<String>("LEVELS_PATH")
                 .expect("required");
 
-            levelparse::parse(&path).unwrap();
+            let output_path = sub_matches
+                .get_one::<String>("OUTPUT_PATH")
+                .expect("required");
+
+            levelparse::parse(&path, &output_path).unwrap();
         }
         Some(("mapgen", sub_matches)) => {
             let input_path = sub_matches
@@ -55,7 +65,9 @@ fn main() -> Result<()> {
                 .get_one::<String>("OUTPUT_PATH")
                 .expect("required");
 
-            mapgen::gen(&input_path, &output_path).unwrap();
+            let scale = sub_matches.get_one::<u32>("SCALE").or(Some(&1));
+
+            mapgen::gen(&input_path, &output_path, *scale.unwrap()).unwrap();
         }
         _ => unreachable!(), // If all subcommands are defined above, anything else is unreachabe!()
     }
