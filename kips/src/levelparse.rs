@@ -94,8 +94,8 @@ pub fn parse(path: &str, output_path: &str) -> Result<()> {
                         let cell_in_last_row = cells.get_mut(cells_len - rowlen);
                         if let Some(l) = cell_in_last_row {
                             if LEVELS_CHAR_ROOM == l.char {
-                                l.exits.push("n".to_string());
-                                cell.exits.push("s".to_string());
+                                l.exits.push("s".to_string());
+                                cell.exits.push("n".to_string());
                             }
                         }
                     }
