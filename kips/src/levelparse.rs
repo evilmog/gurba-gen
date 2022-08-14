@@ -88,7 +88,7 @@ pub fn parse(path: &str, output_path: &str) -> Result<()> {
                     }
 
                     // We can't look behind the first row.
-                    if y > 1 {
+                    if y > 0 {
                         // North-South is based on the cell in the same position on the last row
                         let cells_len = cells.len();
                         let cell_in_last_row = cells.get_mut(cells_len - rowlen);
